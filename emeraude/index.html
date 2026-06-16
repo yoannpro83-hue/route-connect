@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Route Connect — Sites web sur-mesure</title>
+<meta name="description" content="Route Connect — création de sites web sur-mesure. Des sites qui prennent racine et connectent votre activité à vos clients." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#0c1a14;--bg2:#10241b;--panel:#13291f;--line:rgba(208,184,124,.18);
+    --txt:#eef3ec;--muted:#9fb2a4;--em:#2fae7a;--em2:#48d39a;--brass:#d2b87c;--brass2:#e8d3a0;
+    --serif:'Fraunces',serif;--sans:'Inter',sans-serif;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--txt);overflow-x:hidden;line-height:1.6;position:relative}
+  ::selection{background:var(--brass);color:#0c1a14}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1160px,100%);margin:0 auto;padding:0 26px}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background:radial-gradient(80% 50% at 80% -5%,rgba(47,174,122,.16),transparent 60%),
+               radial-gradient(60% 50% at 5% 20%,rgba(210,184,124,.08),transparent 55%)}
+
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(12,26,20,.7);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{font-family:var(--serif);font-weight:500;font-size:1.34rem;letter-spacing:.2px;display:flex;align-items:center;gap:11px}
+  .logo .leaf{width:24px;height:24px;flex-shrink:0}
+  .logo em{font-style:italic;color:var(--brass)}
+  .nav .links{display:flex;gap:32px;font-size:.93rem;color:var(--muted)}
+  .nav .links a{transition:color .25s;position:relative}
+  .nav .links a:hover{color:var(--brass2)}
+  .btn{font-size:.9rem;border:1px solid var(--brass);color:var(--brass2);padding:10px 20px;border-radius:30px;transition:.3s;white-space:nowrap}
+  .btn:hover{background:var(--brass);color:#0c1a14}
+  .btn .d-short{display:none}
+  @media(max-width:760px){.nav .links{display:none}.logo{font-size:1.18rem}.btn{font-size:.84rem;padding:9px 15px}.btn .d-full{display:none}.btn .d-short{display:inline}}
+
+  header{position:relative;z-index:1;padding:clamp(64px,11vw,130px) 0 clamp(40px,7vw,80px);text-align:center}
+  .kicker{font-size:.82rem;letter-spacing:3px;text-transform:uppercase;color:var(--brass);margin-bottom:22px}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,8vw,5.6rem);line-height:1.12;letter-spacing:-1px}
+  h1 em{display:inline-block;padding:.04em .06em .12em;font-style:italic;color:transparent;
+    background:linear-gradient(120deg,var(--em2),var(--brass2));-webkit-background-clip:text;background-clip:text}
+  .lead{color:var(--muted);font-size:clamp(1.06rem,2.3vw,1.3rem);max-width:600px;margin:28px auto 0}
+  .lead b{color:var(--txt);font-weight:500}
+  .cta{display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap}
+  .solid{background:linear-gradient(120deg,var(--em),var(--em2));color:#06231a;font-weight:600;padding:14px 28px;border-radius:30px;transition:.3s;box-shadow:0 16px 40px -16px rgba(47,174,122,.7)}
+  .solid:hover{transform:translateY(-3px);box-shadow:0 22px 50px -18px rgba(47,174,122,.9)}
+  .ghost{padding:14px 26px;border:1px solid var(--line);border-radius:30px;color:var(--txt);transition:.3s}
+  .ghost:hover{border-color:var(--brass)}
+
+  /* root illustration */
+  .roots{margin:60px auto 0;max-width:780px}
+  .roots svg{width:100%;height:auto;display:block;overflow:visible}
+  .roots path,.roots line{stroke-dasharray:1;stroke-dashoffset:1;animation:grow 2.6s ease forwards}
+  @keyframes grow{to{stroke-dashoffset:0}}
+  .roots circle{opacity:0;animation:pop .5s ease forwards}
+  @keyframes pop{to{opacity:1}}
+
+  /* full-page root system behind everything */
+  .rootbg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.5}
+  .rootbg svg{width:100%;height:100%;display:block}
+  .rootbg path{fill:none;stroke:var(--em);stroke-linecap:round;
+    stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .35s ease}
+  .rootbg path.leaf{stroke:var(--brass)}
+  .rootbg circle{opacity:0;transition:opacity .5s ease}
+  /* branches d'accroche : reliées au reste, fixées sur les blocs */
+  .rootbg path.hook{stroke:var(--em2)}
+  @media(prefers-reduced-motion:reduce){.rootbg path{stroke-dashoffset:0}.rootbg circle{opacity:1}}
+
+  section{position:relative;z-index:1;padding:clamp(60px,9vw,110px) 0}
+  .center{text-align:center}
+  .kick2{font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--brass)}
+  .h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.5px;margin:14px 0 0}
+  .sub{color:var(--muted);max-width:560px;margin:16px auto 0;font-size:1.06rem}
+
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:54px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--line)}
+  .svc{background:var(--bg2);padding:38px 30px;transition:.4s}
+  .svc:hover{background:var(--panel)}
+  .svc .num{font-family:var(--serif);font-style:italic;font-size:2.2rem;color:var(--brass)}
+  .svc h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;margin:10px 0 10px}
+  .svc p{color:var(--muted);font-size:.96rem}
+  @media(max-width:780px){.services{grid-template-columns:1fr}}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:54px}
+  .case{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--bg2);transition:.5s cubic-bezier(.22,1,.36,1);display:block}
+  .case:hover{transform:translateY(-8px);box-shadow:0 50px 80px -50px rgba(0,0,0,.85);border-color:var(--brass)}
+  .thumb{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;position:relative}
+  .thumb .t{font-family:var(--serif);font-size:1.7rem;font-weight:500;text-align:center;padding:20px;line-height:1.1}
+  .thumb .s{display:block;font-family:var(--sans);font-size:.74rem;letter-spacing:2px;text-transform:uppercase;margin-top:10px;font-weight:500}
+  .info{padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line)}
+  .info h3{font-family:var(--serif);font-weight:500;font-size:1.18rem}
+  .info .tags{color:var(--muted);font-size:.82rem;margin-top:2px}
+  .info .arrow{color:var(--brass);font-size:1.2rem;transition:.3s}
+  .case:hover .arrow{transform:translate(4px,-4px)}
+  .th1{background:radial-gradient(120% 100% at 30% 0,#1c1838,#12101f 60%,#0c0a17)}.th1 .t{color:#f3eee2}.th1 .s{color:#e7c179}
+  .th2{background:#efe4c8}.th2 .t{color:#14463b}.th2 .s{color:#9c7b3f}
+  .th3{background:radial-gradient(120% 100% at 70% 10%,#2a1230,#160a1c 70%)}.th3 .t{color:#f6e8c8}.th3 .s{color:#d8a0e0}
+  .th4{background:linear-gradient(160deg,#7a1f2b,#3d0f16)}.th4 .t{color:#f7e9d0}.th4 .s{color:#e8b9a0}
+  .th5{background:linear-gradient(160deg,#0d3b3a,#06201f)}.th5 .t{color:#d8f3ee}.th5 .s{color:#7fd9c8}
+  .th6{background:linear-gradient(160deg,#23252b,#121316)}.th6 .t{color:#eef0f2}.th6 .s{color:#9aa3ad}
+  @media(max-width:780px){.grid{grid-template-columns:1fr}}
+
+  .process{display:grid;grid-template-columns:1.1fr 1fr;gap:54px;align-items:center}
+  .steps{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:24px;
+    padding:8px 34px;background:linear-gradient(180deg,var(--panel),var(--bg2))}
+  .step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:0}
+  .step .i{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--brass);flex-shrink:0;width:34px}
+  .step h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;margin-bottom:4px}
+  .step p{color:var(--muted);font-size:.96rem}
+  .quote{border:1px solid var(--line);border-radius:24px;padding:44px 36px;background:linear-gradient(180deg,var(--panel),var(--bg2))}
+  .quote .q{font-family:var(--serif);font-size:1.55rem;line-height:1.4;font-style:italic}
+  .quote .q span{color:var(--brass)}
+  .quote .by{color:var(--muted);margin-top:22px;font-size:.92rem}
+  @media(max-width:860px){.process{grid-template-columns:1fr;gap:40px}}
+
+  .contact{text-align:center;border:1px solid var(--line);border-radius:28px;padding:clamp(48px,8vw,90px) clamp(24px,5vw,60px);
+    background:radial-gradient(120% 120% at 50% 0,rgba(47,174,122,.16),transparent 55%),var(--bg2)}
+  .contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,6vw,3.8rem);letter-spacing:-.5px}
+  .contact h2 em{font-style:italic;color:var(--brass)}
+  .contact p{color:var(--muted);max-width:480px;margin:18px auto 0;font-size:1.08rem}
+
+  /* ——— micro-animations ——— */
+  .nav .links a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--brass);
+    transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+  .nav .links a:hover::after{transform:scaleX(1);transform-origin:left}
+  .logo .leaf{transition:transform .5s cubic-bezier(.34,1.4,.5,1)}
+  .logo:hover .leaf{transform:rotate(-12deg) scale(1.08)}
+  .svc .num{transition:transform .4s cubic-bezier(.22,1,.36,1),color .4s}
+  .svc:hover .num{transform:translateY(-3px);color:var(--brass2)}
+  .step h3,.step .i{transition:color .3s,transform .4s cubic-bezier(.22,1,.36,1)}
+  .step:hover h3{color:var(--brass2)}
+  .step:hover .i{transform:translateX(4px)}
+  .solid,.ghost,.btn,.case,.svc{will-change:transform}
+
+  /* apparition au scroll */
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+  .rv.in{opacity:1;transform:none}
+  .rvf{opacity:0}
+  .rvf.in{opacity:1}
+  @media(prefers-reduced-motion:reduce){.rv,.rvf{opacity:1!important;transform:none!important;transition:none}}
+
+  footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:38px 0;margin-top:20px}
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+  .foot a:hover{color:var(--brass2)}
+  .back{position:fixed;left:18px;bottom:18px;z-index:60;font-size:.82rem;color:var(--muted);border:1px solid var(--line);
+    background:rgba(12,26,20,.8);backdrop-filter:blur(8px);padding:9px 15px;border-radius:30px;transition:.25s}
+  .back:hover{color:var(--brass2);border-color:var(--brass)}
+</style>
+</head>
+<body>
+  <div class="rootbg" aria-hidden="true">
+    <svg id="rootsvg" preserveAspectRatio="none" fill="none"></svg>
+  </div>
+  <a class="back" href="../index.html">← versions</a>
+  <nav><div class="wrap nav">
+    <a class="logo" href="#top">
+      <svg class="leaf" viewBox="0 0 24 24" fill="none"><path d="M12 22V8M12 8c0-3 2-5 5-5 0 4-2 6-5 6M12 12c0-2.5-2-4-4.5-4 0 3 2 4.5 4.5 4.5" stroke="#d2b87c" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Route<em>Connect</em></a>
+    <div class="links"><a href="#services">Services</a><a href="#work">Réalisations</a><a href="#process">Méthode</a><a href="#contact">Contact</a></div>
+    <a class="btn" href="#contact"><span class="d-full">Démarrer un projet</span><span class="d-short">Démarrer →</span></a>
+  </div></nav>
+
+  <header id="top"><div class="wrap">
+    <div class="kicker">Création de sites web sur-mesure</div>
+    <h1>Des sites qui<br><em>prennent racine.</em></h1>
+    <p class="lead">Route Connect dessine et développe des <b>sites web élégants</b> qui ancrent votre activité en ligne et la connectent à vos clients.</p>
+    <div class="cta">
+      <a class="solid" href="#work">Voir mes réalisations</a>
+      <a class="ghost" href="#contact">Parler de mon projet</a>
+    </div>
+  </div></header>
+
+  <section id="services"><div class="wrap">
+    <div class="center">
+      <div class="kick2">Ce que je fais</div>
+      <h2 class="h2">Un accompagnement complet</h2>
+      <p class="sub">De la première idée jusqu'à la mise en ligne, je m'occupe de tout.</p>
+    </div>
+    <div class="services">
+      <div class="svc"><div class="num">i</div><h3>Direction artistique</h3><p>Plusieurs ambiances proposées au choix. On repart de zéro pour une identité qui vous ressemble.</p></div>
+      <div class="svc"><div class="num">ii</div><h3>Développement</h3><p>Sites rapides et responsive, soignés dans le moindre détail. Du code propre, des animations subtiles.</p></div>
+      <div class="svc"><div class="num">iii</div><h3>Mise en ligne</h3><p>Hébergement, nom de domaine, suivi. Votre site en ligne, sans aucune prise de tête.</p></div>
+    </div>
+  </div></section>
+
+  <section id="work"><div class="wrap">
+    <div class="center">
+      <div class="kick2">Réalisations</div>
+      <h2 class="h2">Des projets en ligne</h2>
+      <p class="sub">Chaque site avec sa propre direction artistique, pensée sur-mesure.</p>
+    </div>
+    <div class="grid">
+      <a class="case" href="#contact"><div class="thumb th1"><div class="t">Rachel Hermann<span class="s">Voyance · 3 ambiances</span></div></div><div class="info"><div><h3>Rachel Hermann</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
+      <a class="case" href="#contact"><div class="thumb th3"><div class="t">Tania des Anges<span class="s">Voyance · sombre &amp; clair</span></div></div><div class="info"><div><h3>Tania des Anges</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
+      <a class="case" href="#contact"><div class="thumb th2"><div class="t">Brocante du Cœur<span class="s">Association solidaire</span></div></div><div class="info"><div><h3>Brocante du Cœur</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
+      <a class="case" href="#contact"><div class="thumb th4"><div class="t">Trattoria Lucia<span class="s">Restaurant italien</span></div></div><div class="info"><div><h3>Trattoria Lucia</h3><div class="tags">Exemple · Vitrine + menu</div></div><span class="arrow">↗</span></div></a>
+      <a class="case" href="#contact"><div class="thumb th5"><div class="t">Atelier Verde<span class="s">Paysagiste</span></div></div><div class="info"><div><h3>Atelier Verde</h3><div class="tags">Exemple · Portfolio</div></div><span class="arrow">↗</span></div></a>
+      <a class="case" href="#contact"><div class="thumb th6"><div class="t">Nord Studio<span class="s">Coaching &amp; conseil</span></div></div><div class="info"><div><h3>Nord Studio</h3><div class="tags">Exemple · Landing</div></div><span class="arrow">↗</span></div></a>
+    </div>
+  </div></section>
+
+  <section id="process"><div class="wrap">
+    <div class="process">
+      <div>
+        <div class="kick2">Méthode</div>
+        <h2 class="h2" style="margin-bottom:18px">Simple &amp; sans jargon</h2>
+        <div class="steps">
+          <div class="step"><div class="i">i</div><div><h3>On échange</h3><p>Votre métier, vos clients, votre message. On cadre tout, devis clair.</p></div></div>
+          <div class="step"><div class="i">ii</div><div><h3>Je propose</h3><p>Plusieurs directions artistiques. Vous choisissez celle qui vous parle.</p></div></div>
+          <div class="step"><div class="i">iii</div><div><h3>Je construis</h3><p>Le site complet, responsive. Des allers-retours jusqu'au bon résultat.</p></div></div>
+          <div class="step"><div class="i">iv</div><div><h3>En ligne</h3><p>Mise en ligne, domaine, suivi. Prêt à accueillir vos clients.</p></div></div>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="q">« Un site web, c'est une <span>racine</span> : invisible au départ, mais c'est ce qui fait tenir tout le reste. »</div>
+        <div class="by">— La philosophie Route Connect</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="contact"><div class="wrap">
+    <div class="contact">
+      <h2>On crée votre <em>racine&nbsp;?</em></h2>
+      <p>Un projet, une idée, ou simplement une question — écrivez-moi, je réponds vite.</p>
+      <div class="cta" style="margin-top:34px">
+        <a class="solid" href="mailto:contact@route-connect.fr">contact@route-connect.fr</a>
+        <a class="ghost" href="#top">Retour en haut ↑</a>
+      </div>
+    </div>
+  </div></section>
+
+  <footer><div class="wrap foot">
+    <span>© <span id="y"></span> Route Connect — Sites web sur-mesure</span>
+    <span><a href="mailto:contact@route-connect.fr">contact@route-connect.fr</a></span>
+  </div></footer>
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+    (function(){
+      var SVGNS='http://www.w3.org/2000/svg';
+      var svg=document.getElementById('rootsvg');
+      var W=1200, MAXD=6;
+      var base=[], baseNodes=[], natMaxY=0, gMax=0;
+      // PRNG déterministe -> racine identique à chaque chargement
+      var seed=20240611;
+      function rnd(){seed=(seed*1103515245+12345)&0x7fffffff;return seed/0x7fffffff;}
+      function clamp(v,a,b){return v<a?a:(v>b?b:v);}
+
+      // Construction récursive : chaque branche démarre EXACTEMENT au bout de
+      // sa parente -> l'ensemble est un seul organisme entièrement relié.
+      function grow(x,y,ang,len,depth,gStart){
+        var ex=clamp(x+Math.cos(ang)*len,24,W-24);
+        var ey=y+Math.sin(ang)*len;
+        // point de contrôle cintré perpendiculairement -> courbe organique
+        var dx=ex-x, dy=ey-y, bow=(rnd()-0.5)*0.6;
+        var cx=(x+ex)/2 - dy*bow;
+        var cy=(y+ey)/2 + dx*bow;
+        var gEnd=gStart+len;
+        base.push({x1:x,y1:y,cx:cx,cy:cy,x2:ex,y2:ey,g0:gStart,g1:gEnd,leaf:depth>=MAXD,depth:depth});
+        if(ey>natMaxY)natMaxY=ey; if(gEnd>gMax)gMax=gEnd;
+        if(depth>=MAXD){ if(rnd()<0.6) baseNodes.push({x:ex,y:ey,g:gEnd,leaf:true}); return; }
+        var n=depth===0?3:(depth<=2?(rnd()<0.52?3:2):(rnd()<0.46?2:1));
+        var spread=0.62+depth*0.16;     // s'évase de plus en plus en profondeur
+        for(var i=0;i<n;i++){
+          var t=n===1?(rnd()-0.5):(i/(n-1)-0.5);
+          var a=clamp(ang+t*spread+(rnd()-0.5)*0.18, 0.35, Math.PI-0.35);
+          grow(ex,ey,a,len*(0.74+rnd()*0.08),depth+1,gEnd);
+        }
+        if(depth===1) baseNodes.push({x:ex,y:ey,g:gEnd,leaf:false}); // jonctions majeures
+      }
+      grow(W/2,0,Math.PI/2,300,0,0);
+
+      // Création des éléments (une seule fois)
+      var pathEls=base.map(function(s){
+        var p=document.createElementNS(SVGNS,'path');
+        p.setAttribute('pathLength','1');
+        if(s.leaf)p.setAttribute('class','leaf');
+        svg.appendChild(p);
+        return {el:p,g0:s.g0/gMax,g1:s.g1/gMax,depth:s.depth};
+      });
+      var nodeEls=baseNodes.map(function(nd){
+        var c=document.createElementNS(SVGNS,'circle');
+        c.setAttribute('cx',nd.x.toFixed(1));
+        c.setAttribute('fill',nd.leaf?'#d2b87c':'#48d39a');
+        svg.appendChild(c);
+        return {el:c,g:nd.g/gMax,leaf:nd.leaf};
+      });
+
+      // Accroches : depuis une extrémité de racine DÉJÀ poussée (donc visible
+      // et reliée au reste), une branche rejoint le bloc et s'y fixe. Jamais
+      // de morceau détaché.
+      var endpoints=base.map(function(s){return {x:s.x2,y:s.y2,g:s.g1/gMax};});
+      var anchorEls=[].slice.call(document.querySelectorAll('.services,.case,.steps,.quote,.contact'));
+      var hooks=anchorEls.map(function(el){
+        var p=document.createElementNS(SVGNS,'path');
+        p.setAttribute('class','hook'); p.setAttribute('pathLength','1');
+        var c=document.createElementNS(SVGNS,'circle');
+        c.setAttribute('class','hooknode'); c.setAttribute('fill','#9affc9');
+        svg.appendChild(p); svg.appendChild(c);
+        return {el:el,path:p,node:c,g0:1,g1:1,revealed:false};
+      });
+
+      // ——— Apparition des contenus ———
+      // Les blocs accrochés par une racine apparaissent QUAND leur racine s'y
+      // fixe (piloté plus bas dans draw). Le reste (titres, textes) apparaît au
+      // scroll classique.
+      var revSel='header .kicker,header h1,header .lead,header .cta,.kick2,.h2,.sub,.svc,.case,.steps,.quote,.contact';
+      [].slice.call(document.querySelectorAll(revSel)).forEach(function(el){
+        el.classList.add((el.classList.contains('svc')||el.classList.contains('case'))?'rvf':'rv');
+      });
+      // éléments à révéler quand l'accroche se fixe : le bloc + ses cartes internes
+      hooks.forEach(function(h){
+        var els=[];
+        if(h.el.classList.contains('rv')||h.el.classList.contains('rvf')) els.push(h.el);
+        [].slice.call(h.el.querySelectorAll('.svc,.case,.steps,.quote')).forEach(function(d){els.push(d);});
+        h.revEls=els;
+        els.forEach(function(e){e.__hd=1;});  // marqués : pilotés par la racine
+      });
+      // observer de scroll pour tout le reste (non piloté par la racine)
+      var ioNodes=[].slice.call(document.querySelectorAll('.rv,.rvf')).filter(function(e){return !e.__hd;});
+      if('IntersectionObserver' in window){
+        var rio=new IntersectionObserver(function(es){es.forEach(function(e){
+          if(e.isIntersecting){e.target.classList.add('in');rio.unobserve(e.target);}});},
+          {threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+        ioNodes.forEach(function(e){rio.observe(e);});
+      } else {
+        [].slice.call(document.querySelectorAll('.rv,.rvf')).forEach(function(e){e.classList.add('in');});
+      }
+      function layoutHooks(scale,sy){
+        var vh=window.innerHeight, maxs=Math.max(1,document.documentElement.scrollHeight-vh);
+        hooks.forEach(function(h){
+          var r=h.el.getBoundingClientRect();
+          var apx=(r.left+window.scrollX+r.width/2)/scale;
+          var apy=(r.top+window.scrollY-6)/scale;
+          // progression de scroll quand le bloc entre par le bas de l'écran
+          // (borné à .88 pour que même le dernier bloc puisse se compléter)
+          var bp=clamp(0.04+0.98*((r.top+window.scrollY-vh*0.92)/maxs),0,0.88);
+          // extrémité de racine la plus proche, déjà poussée (g<=bp) et au-dessus
+          var best=-1,bestD=Infinity,i,ep,ex,ey,dx,dy,d;
+          for(i=0;i<endpoints.length;i++){ ep=endpoints[i]; if(ep.g>bp)continue;
+            ex=ep.x; ey=ep.y*sy; if(ey>apy+12)continue;
+            dx=ex-apx; dy=ey-apy; d=dx*dx+dy*dy; if(d<bestD){bestD=d;best=i;} }
+          if(best<0){ for(i=0;i<endpoints.length;i++){ ep=endpoints[i]; if(ep.g>bp)continue;
+            ex=ep.x; ey=ep.y*sy; dx=ex-apx; dy=ey-apy; d=dx*dx+dy*dy; if(d<bestD){bestD=d;best=i;} } }
+          if(best<0)best=0;
+          var sx=endpoints[best].x, syy=endpoints[best].y*sy;
+          h.g0=Math.max(endpoints[best].g,bp); h.g1=Math.min(0.97,h.g0+0.06);
+          var mx=(sx+apx)/2-(apy-syy)*0.16, my=(syy+apy)/2+(apx-sx)*0.16;
+          h.path.setAttribute('d','M'+sx.toFixed(1)+' '+syy.toFixed(1)+' Q'+mx.toFixed(1)+' '+my.toFixed(1)+' '+apx.toFixed(1)+' '+apy.toFixed(1));
+          h.path.setAttribute('stroke-width',(1.5/scale).toFixed(2));
+          h.node.setAttribute('cx',apx.toFixed(1)); h.node.setAttribute('cy',apy.toFixed(1)); h.node.setAttribute('r',(4/scale).toFixed(2));
+        });
+      }
+
+      // Cale le ratio du SVG sur celui de la page -> échelle UNIFORME (pas de
+      // distorsion) : l'évasement horizontal est conservé tel quel.
+      function layout(){
+        var pw=document.documentElement.clientWidth||1;
+        var ph=document.documentElement.scrollHeight||1;
+        var targetH=W*ph/pw;
+        var sy=targetH/natMaxY;
+        var scale=pw/W;                 // px par unité (uniforme car ratio calé sur la page)
+        svg.setAttribute('viewBox','0 0 '+W+' '+Math.ceil(targetH));
+        base.forEach(function(s,i){
+          pathEls[i].el.setAttribute('d',
+            'M'+s.x1.toFixed(1)+' '+(s.y1*sy).toFixed(1)+
+            ' Q'+s.cx.toFixed(1)+' '+(s.cy*sy).toFixed(1)+
+            ' '+s.x2.toFixed(1)+' '+(s.y2*sy).toFixed(1));
+          // épaisseur en unités SVG -> px constants après mise à l'échelle
+          var dpx=Math.max(0.9,2.2-pathEls[i].depth*0.22);
+          pathEls[i].el.setAttribute('stroke-width',(dpx/scale).toFixed(2));
+        });
+        baseNodes.forEach(function(nd,i){
+          nodeEls[i].el.setAttribute('cy',(nd.y*sy).toFixed(1));
+          nodeEls[i].el.setAttribute('r',((nd.leaf?2.8:4)/scale).toFixed(2));
+        });
+        layoutHooks(scale,sy);
+      }
+
+      var ticking=false;
+      function draw(){
+        ticking=false;
+        var max=document.documentElement.scrollHeight-window.innerHeight;
+        var raw=max>0?clamp(window.scrollY/max,0,1):1;
+        var p=0.04+0.98*raw;            // tronc déjà amorcé tout en haut
+        for(var i=0;i<pathEls.length;i++){
+          var pe=pathEls[i];
+          var local=clamp((p-pe.g0)/Math.max(0.0001,(pe.g1-pe.g0)),0,1);
+          pe.el.style.strokeDashoffset=String(1-local);
+        }
+        for(var j=0;j<nodeEls.length;j++){
+          nodeEls[j].el.style.opacity = p>=nodeEls[j].g ? '1' : '0';
+        }
+        for(var k=0;k<hooks.length;k++){
+          var hk=hooks[k];
+          var hl=clamp((p-hk.g0)/Math.max(0.0001,(hk.g1-hk.g0)),0,1);
+          hk.path.style.strokeDashoffset=String(1-hl);
+          hk.node.style.opacity = hl>=0.85 ? '1' : '0';
+          // le bloc apparaît quand sa racine vient s'y fixer
+          if(!hk.revealed && hl>=0.6){
+            hk.revealed=true;
+            hk.revEls.forEach(function(e){e.classList.add('in');});
+          }
+        }
+      }
+      function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(draw); } }
+      var rt;
+      function onResize(){ clearTimeout(rt); rt=setTimeout(function(){layout();draw();},150); }
+      window.addEventListener('scroll',onScroll,{passive:true});
+      window.addEventListener('resize',onResize);
+      layout(); draw();
+    })();
+
+  </script>
+</body>
+</html>
