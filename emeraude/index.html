@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Route Connect — Sites web sur-mesure</title>
-<meta name="description" content="Route Connect — création de sites web sur-mesure. Des sites qui prennent racine et connectent votre activité à vos clients." />
+<title>Root Connect — Sites web sur-mesure</title>
+<meta name="description" content="Root Connect — création de sites web sur-mesure. Des sites qui prennent racine et connectent votre activité à vos clients." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -122,25 +122,60 @@
   .contact h2 em{font-style:italic;color:var(--brass)}
   .contact p{color:var(--muted);max-width:480px;margin:18px auto 0;font-size:1.08rem}
 
+  /* ——— or brillant : balayage lumineux sur tout ce qui est doré ——— */
+  .kicker,.kick2,.logo em,.svc .num,.step .i,.quote .q span,.contact h2 em{
+    background-image:linear-gradient(100deg,#b8923f 0%,#d6b878 28%,#fff4cf 47%,#f7e6b0 53%,#d6b878 72%,#b8923f 100%);
+    background-size:250% 100%;-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;animation:goldsheen 5.5s linear infinite}
+  .kick2{animation-delay:.6s}.svc .num{animation-delay:.3s}.step .i{animation-delay:.9s}
+  .quote .q span{animation-delay:1.2s}.contact h2 em{animation-delay:.4s}
+  @keyframes goldsheen{0%{background-position:170% 0}100%{background-position:-170% 0}}
+  /* le grand titre garde son dégradé vert→or mais reçoit un reflet qui passe */
+  h1 em{background-image:linear-gradient(100deg,var(--em2) 0%,var(--em2) 26%,#fff6d8 46%,var(--brass2) 60%,var(--brass2) 100%);
+    background-size:230% 100%;animation:goldsheen 7s linear infinite}
+
   /* ——— micro-animations ——— */
   .nav .links a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--brass);
     transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.22,1,.36,1)}
   .nav .links a:hover::after{transform:scaleX(1);transform-origin:left}
+  .nav .links a{transition:color .25s,transform .25s}
+  .nav .links a:hover{transform:translateY(-1px)}
   .logo .leaf{transition:transform .5s cubic-bezier(.34,1.4,.5,1)}
-  .logo:hover .leaf{transform:rotate(-12deg) scale(1.08)}
-  .svc .num{transition:transform .4s cubic-bezier(.22,1,.36,1),color .4s}
-  .svc:hover .num{transform:translateY(-3px);color:var(--brass2)}
-  .step h3,.step .i{transition:color .3s,transform .4s cubic-bezier(.22,1,.36,1)}
+  .logo:hover .leaf{transform:rotate(-12deg) scale(1.12)}
+  .svc{transition:.45s cubic-bezier(.22,1,.36,1)}
+  .svc .num{display:inline-block;transition:transform .45s cubic-bezier(.34,1.4,.5,1)}
+  .svc:hover{background:var(--panel);box-shadow:inset 0 0 0 1px rgba(210,184,124,.28)}
+  .svc:hover .num{transform:translateY(-4px) scale(1.12)}
+  .svc:hover h3{color:var(--brass2)}
+  .svc h3{transition:color .35s}
+  .step h3,.step .i{transition:color .3s,transform .4s cubic-bezier(.34,1.4,.5,1)}
   .step:hover h3{color:var(--brass2)}
-  .step:hover .i{transform:translateX(4px)}
+  .step:hover .i{transform:translateX(5px) scale(1.1)}
+  /* cartes réalisations : soulèvement + zoom de la vignette */
+  .case:hover{transform:translateY(-10px) scale(1.012);box-shadow:0 60px 90px -50px rgba(0,0,0,.9)}
+  .thumb{transition:transform .65s cubic-bezier(.22,1,.36,1)}
+  .case:hover .thumb{transform:scale(1.06)}
+  .case:hover .info h3{color:var(--brass2)}
+  .info h3{transition:color .35s}
+  /* boutons : reflet qui traverse au survol */
+  .solid,.ghost,.btn{position:relative;overflow:hidden;isolation:isolate}
+  .solid::before,.ghost::before,.btn::before{content:"";position:absolute;top:0;left:-160%;width:75%;height:100%;z-index:1;
+    background:linear-gradient(100deg,transparent,rgba(255,247,222,.55),transparent);transform:skewX(-20deg);
+    transition:left .7s cubic-bezier(.22,1,.36,1);pointer-events:none}
+  .solid:hover::before,.ghost:hover::before,.btn:hover::before{left:170%}
   .solid,.ghost,.btn,.case,.svc{will-change:transform}
 
-  /* apparition au scroll */
-  .rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-  .rv.in{opacity:1;transform:none}
-  .rvf{opacity:0}
-  .rvf.in{opacity:1}
-  @media(prefers-reduced-motion:reduce){.rv,.rvf{opacity:1!important;transform:none!important;transition:none}}
+  /* ——— apparitions retravaillées (fondu + montée + mise au point) ——— */
+  .rv{opacity:0;transform:translateY(30px);filter:blur(7px);
+    transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),filter .8s ease}
+  .rv.in{opacity:1;transform:none;filter:blur(0)}
+  .rvf{opacity:0;filter:blur(6px)}
+  .rvf.in{opacity:1;filter:blur(0)}
+  @media(prefers-reduced-motion:reduce){
+    .rv,.rvf{opacity:1!important;transform:none!important;filter:none!important;transition:none}
+    .kicker,.kick2,.logo em,.svc .num,.step .i,.quote .q span,.contact h2 em,h1 em{animation:none}
+    .kicker,.kick2,.logo em,.svc .num,.step .i,.quote .q span,.contact h2 em{-webkit-text-fill-color:var(--brass);color:var(--brass)}
+  }
 
   footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:38px 0;margin-top:20px}
   .foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
@@ -158,7 +193,7 @@
   <nav><div class="wrap nav">
     <a class="logo" href="#top">
       <svg class="leaf" viewBox="0 0 24 24" fill="none"><path d="M12 22V8M12 8c0-3 2-5 5-5 0 4-2 6-5 6M12 12c0-2.5-2-4-4.5-4 0 3 2 4.5 4.5 4.5" stroke="#d2b87c" stroke-width="1.5" stroke-linecap="round"/></svg>
-      Route<em>Connect</em></a>
+      Root<em>Connect</em></a>
     <div class="links"><a href="#services">Services</a><a href="#work">Réalisations</a><a href="#process">Méthode</a><a href="#contact">Contact</a></div>
     <a class="btn" href="#contact"><span class="d-full">Démarrer un projet</span><span class="d-short">Démarrer →</span></a>
   </div></nav>
@@ -166,7 +201,7 @@
   <header id="top"><div class="wrap">
     <div class="kicker">Création de sites web sur-mesure</div>
     <h1>Des sites qui<br><em>prennent racine.</em></h1>
-    <p class="lead">Route Connect dessine et développe des <b>sites web élégants</b> qui ancrent votre activité en ligne et la connectent à vos clients.</p>
+    <p class="lead">Root Connect dessine et développe des <b>sites web élégants</b> qui ancrent votre activité en ligne et la connectent à vos clients.</p>
     <div class="cta">
       <a class="solid" href="#work">Voir mes réalisations</a>
       <a class="ghost" href="#contact">Parler de mon projet</a>
@@ -216,7 +251,7 @@
       </div>
       <div class="quote">
         <div class="q">« Un site web, c'est une <span>racine</span> : invisible au départ, mais c'est ce qui fait tenir tout le reste. »</div>
-        <div class="by">— La philosophie Route Connect</div>
+        <div class="by">— La philosophie Root Connect</div>
       </div>
     </div>
   </div></section>
@@ -226,15 +261,15 @@
       <h2>On crée votre <em>racine&nbsp;?</em></h2>
       <p>Un projet, une idée, ou simplement une question — écrivez-moi, je réponds vite.</p>
       <div class="cta" style="margin-top:34px">
-        <a class="solid" href="mailto:contact@route-connect.fr">contact@route-connect.fr</a>
+        <a class="solid" href="mailto:contact@root-connect.fr">contact@root-connect.fr</a>
         <a class="ghost" href="#top">Retour en haut ↑</a>
       </div>
     </div>
   </div></section>
 
   <footer><div class="wrap foot">
-    <span>© <span id="y"></span> Route Connect — Sites web sur-mesure</span>
-    <span><a href="mailto:contact@route-connect.fr">contact@route-connect.fr</a></span>
+    <span>© <span id="y"></span> Root Connect — Sites web sur-mesure</span>
+    <span><a href="mailto:contact@root-connect.fr">contact@root-connect.fr</a></span>
   </div></footer>
   <script>
     document.getElementById('y').textContent=new Date().getFullYear();
@@ -398,10 +433,12 @@
           var hl=clamp((p-hk.g0)/Math.max(0.0001,(hk.g1-hk.g0)),0,1);
           hk.path.style.strokeDashoffset=String(1-hl);
           hk.node.style.opacity = hl>=0.85 ? '1' : '0';
-          // le bloc apparaît quand sa racine vient s'y fixer
-          if(!hk.revealed && hl>=0.6){
-            hk.revealed=true;
-            hk.revEls.forEach(function(e){e.classList.add('in');});
+          // le bloc apparaît quand sa racine vient s'y fixer, ou au plus tard
+          // dès qu'il est bien dans l'écran (jamais de bloc vide qui traîne)
+          if(!hk.revealed){
+            var seen=hl>=0.5;
+            if(!seen){var rb=hk.el.getBoundingClientRect();seen=rb.top<window.innerHeight*0.62 && rb.bottom>0;}
+            if(seen){hk.revealed=true;hk.revEls.forEach(function(e){e.classList.add('in');});}
           }
         }
       }
