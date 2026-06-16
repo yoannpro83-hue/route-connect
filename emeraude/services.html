@@ -31,103 +31,121 @@
   .logo em{font-style:italic;color:var(--brass)}
   .nav .links{display:flex;gap:32px;font-size:.93rem;color:var(--muted)}
   .nav .links a{transition:color .25s;position:relative}
-  .nav .links a:hover{color:var(--brass2)}
-  .nav .links a.active{color:var(--brass2)}
+  .nav .links a:hover,.nav .links a.active{color:var(--brass2)}
   .btn{font-size:.9rem;border:1px solid var(--brass);color:var(--brass2);padding:10px 20px;border-radius:30px;transition:.3s;white-space:nowrap}
   .btn:hover{background:var(--brass);color:#0c1a14}
   .btn .d-short{display:none}
   @media(max-width:760px){.nav .links{display:none}.logo{font-size:1.18rem}.btn{font-size:.84rem;padding:9px 15px}.btn .d-full{display:none}.btn .d-short{display:inline}}
 
-  header{position:relative;z-index:1;padding:clamp(64px,11vw,130px) 0 clamp(40px,7vw,70px);text-align:center}
-  .kicker{font-size:.82rem;letter-spacing:3px;text-transform:uppercase;color:var(--brass);margin-bottom:22px}
-  h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,8vw,5.6rem);line-height:1.12;letter-spacing:-1px}
-  h1 em{display:inline-block;padding:.04em .06em .12em;font-style:italic;color:transparent;
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.8rem,8.5vw,6rem);line-height:1.04;letter-spacing:-1.5px}
+  h1 em{display:inline-block;padding:.02em .04em .1em;font-style:italic;color:transparent;
     background:linear-gradient(120deg,var(--em2),var(--brass2));-webkit-background-clip:text;background-clip:text}
-  .lead{color:var(--muted);font-size:clamp(1.06rem,2.3vw,1.3rem);max-width:620px;margin:28px auto 0}
+  .lead{color:var(--muted);font-size:clamp(1.05rem,2.2vw,1.26rem)}
   .lead b{color:var(--txt);font-weight:500}
-  .cta{display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap}
-  .solid{background:linear-gradient(120deg,var(--em),var(--em2));color:#06231a;font-weight:600;padding:14px 28px;border-radius:30px;transition:.3s;box-shadow:0 16px 40px -16px rgba(47,174,122,.7)}
+  .solid{display:inline-block;background:linear-gradient(120deg,var(--em),var(--em2));color:#06231a;font-weight:600;padding:14px 28px;border-radius:30px;transition:.3s;box-shadow:0 16px 40px -16px rgba(47,174,122,.7)}
   .solid:hover{transform:translateY(-3px);box-shadow:0 22px 50px -18px rgba(47,174,122,.9)}
-  .ghost{padding:14px 26px;border:1px solid var(--line);border-radius:30px;color:var(--txt);transition:.3s}
+  .ghost{display:inline-block;padding:14px 26px;border:1px solid var(--line);border-radius:30px;color:var(--txt);transition:.3s}
   .ghost:hover{border-color:var(--brass)}
 
   /* full-page root system behind everything */
   .rootbg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.5}
   .rootbg svg{width:100%;height:100%;display:block}
-  .rootbg path{fill:none;stroke:var(--em);stroke-linecap:round;
-    stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .35s ease}
+  .rootbg path{fill:none;stroke:var(--em);stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .35s ease}
   .rootbg path.leaf{stroke:var(--brass)}
   .rootbg circle{opacity:0;transition:opacity .5s ease}
   .rootbg path.hook{stroke:var(--em2)}
   @media(prefers-reduced-motion:reduce){.rootbg path{stroke-dashoffset:0}.rootbg circle{opacity:1}}
 
-  section{position:relative;z-index:1;padding:clamp(60px,9vw,110px) 0}
-  .center{text-align:center}
+  section{position:relative;z-index:1;padding:clamp(54px,8vw,96px) 0}
   .kick2{font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--brass)}
-  .h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.5px;margin:14px 0 0}
-  .sub{color:var(--muted);max-width:560px;margin:16px auto 0;font-size:1.06rem}
+  .h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.5px;margin:12px 0 0}
+  .shead .sub{color:var(--muted);max-width:540px;margin:14px 0 0;font-size:1.05rem}
+  .shead .num{float:right;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--muted);margin-top:4px}
 
-  /* prestations */
-  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px}
-  .offer{border:1px solid var(--line);border-radius:20px;padding:32px 28px;background:var(--bg2);transition:.5s cubic-bezier(.22,1,.36,1)}
-  .offer:hover{transform:translateY(-8px);border-color:var(--brass);box-shadow:0 50px 80px -50px rgba(0,0,0,.85)}
-  .offer .ic{width:48px;height:48px;border:1px solid var(--line);border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--brass2);transition:.4s}
-  .offer:hover .ic{border-color:var(--brass);background:rgba(210,184,124,.1);transform:translateY(-2px) rotate(-4deg)}
-  .offer .ic svg{width:24px;height:24px}
-  .offer h3{font-family:var(--serif);font-weight:500;font-size:1.35rem;margin-bottom:10px;transition:color .35s}
-  .offer:hover h3{color:var(--brass2)}
-  .offer>p{color:var(--muted);font-size:.96rem;margin-bottom:18px}
-  .offer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-  .offer li{font-size:.9rem;display:flex;align-items:center;gap:10px}
-  .offer li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--em2);flex-shrink:0;box-shadow:0 0 8px rgba(72,211,154,.5)}
-  @media(max-width:880px){.offers{grid-template-columns:1fr 1fr}}
-  @media(max-width:560px){.offers{grid-template-columns:1fr}}
+  /* ——— HERO asymétrique ——— */
+  .shero{position:relative;z-index:1;padding:clamp(58px,10vw,118px) 0 clamp(26px,4vw,52px)}
+  .shero .topline{display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+    border-bottom:1px solid var(--line);padding-bottom:18px}
+  .shero .kicker{font-size:.82rem;letter-spacing:3px;text-transform:uppercase;color:var(--brass)}
+  .shero .topmeta{font-size:.76rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+  .shero h1{margin-top:30px;max-width:13ch}
+  .shero .hrow{display:grid;grid-template-columns:1.25fr 1fr;gap:44px;align-items:end;
+    margin-top:34px;border-top:1px solid var(--line);padding-top:34px}
+  .shero .cta{display:flex;gap:14px;flex-wrap:wrap}
+  @media(max-width:780px){.shero .hrow{grid-template-columns:1fr;gap:26px}}
 
-  /* formules */
-  .formulas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px;align-items:stretch}
-  .formula{border:1px solid var(--line);border-radius:22px;padding:34px 30px;background:var(--bg2);display:flex;flex-direction:column;transition:.5s cubic-bezier(.22,1,.36,1)}
-  .formula:hover{transform:translateY(-8px);box-shadow:0 50px 80px -50px rgba(0,0,0,.85)}
-  .formula.feature{background:linear-gradient(180deg,var(--panel),var(--bg2));border-color:var(--brass);box-shadow:0 30px 70px -40px rgba(0,0,0,.7)}
-  .formula .badge{align-self:flex-start;font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:#06231a;
-    background:linear-gradient(120deg,var(--em),var(--em2));padding:5px 13px;border-radius:30px;margin-bottom:16px;font-weight:600}
-  .formula .fname{font-family:var(--serif);font-weight:500;font-size:1.5rem}
-  .formula .price{font-family:var(--serif);font-size:2.1rem;color:var(--brass2);margin:8px 0 2px}
-  .formula .price small{font-family:var(--sans);font-size:.78rem;color:var(--muted);font-weight:400;letter-spacing:.3px}
-  .formula .fdesc{color:var(--muted);font-size:.92rem;margin:6px 0 22px;padding-bottom:22px;border-bottom:1px solid var(--line)}
-  .formula ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;flex:1}
-  .formula li{font-size:.92rem;display:flex;align-items:flex-start;gap:11px}
-  .formula li svg{width:17px;height:17px;flex-shrink:0;margin-top:2px;stroke:var(--em2)}
-  .formula .pick{text-align:center;border:1px solid var(--brass);color:var(--brass2);padding:13px;border-radius:30px;transition:.3s;font-weight:500}
-  .formula .pick:hover{background:var(--brass);color:#0c1a14}
-  .formula.feature .pick{background:linear-gradient(120deg,var(--em),var(--em2));border-color:transparent;color:#06231a;font-weight:600;box-shadow:0 16px 36px -18px rgba(47,174,122,.8)}
-  @media(max-width:880px){.formulas{grid-template-columns:1fr;max-width:430px;margin-left:auto;margin-right:auto}}
+  /* ——— PRESTATIONS : liste numérotée éditoriale ——— */
+  .prest{margin-top:46px;border-top:1px solid var(--line)}
+  .prow{display:grid;grid-template-columns:clamp(2.4em,7vw,3.4em) 1fr auto;gap:clamp(16px,3vw,34px);align-items:center;
+    padding:clamp(22px,3vw,32px) 4px;border-bottom:1px solid var(--line);position:relative;
+    transition:padding .45s cubic-bezier(.22,1,.36,1),background .45s}
+  .prow::before{content:"";position:absolute;left:-26px;right:-26px;top:0;bottom:0;z-index:-1;border-radius:16px;
+    background:linear-gradient(90deg,rgba(210,184,124,.07),transparent 55%);opacity:0;transition:opacity .45s}
+  .prow:hover{padding-left:18px}
+  .prow:hover::before{opacity:1}
+  .prow .idx{font-family:var(--serif);font-style:italic;font-size:clamp(1.9rem,5vw,2.9rem);color:var(--brass);transition:transform .45s cubic-bezier(.34,1.4,.5,1)}
+  .prow:hover .idx{transform:translateY(-5px)}
+  .prow .mid h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.3rem,3vw,1.75rem);transition:color .3s}
+  .prow:hover .mid h3{color:var(--brass2)}
+  .prow .mid p{color:var(--muted);font-size:.97rem;max-width:50ch;margin-top:5px}
+  .prow .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+  .prow .chips span{font-size:.75rem;border:1px solid var(--line);border-radius:30px;padding:4px 11px;color:var(--muted);transition:.3s}
+  .prow:hover .chips span{border-color:rgba(210,184,124,.4);color:var(--txt)}
+  .prow .arrow{font-size:1.4rem;color:var(--brass);align-self:center;opacity:.5;transition:.4s}
+  .prow:hover .arrow{opacity:1;transform:translate(4px,-4px)}
+  @media(max-width:720px){.prow{grid-template-columns:clamp(2em,9vw,2.6em) 1fr}.prow .arrow{display:none}}
 
-  .process{display:grid;grid-template-columns:1.1fr 1fr;gap:54px;align-items:center}
-  .steps{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:24px;
-    padding:8px 34px;background:linear-gradient(180deg,var(--panel),var(--bg2))}
-  .step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
-  .step:last-child{border-bottom:0}
-  .step .i{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--brass);flex-shrink:0;width:34px}
-  .step h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;margin-bottom:4px}
-  .step p{color:var(--muted);font-size:.96rem}
-  .quote{border:1px solid var(--line);border-radius:24px;padding:44px 36px;background:linear-gradient(180deg,var(--panel),var(--bg2))}
-  .quote .q{font-family:var(--serif);font-size:1.55rem;line-height:1.4;font-style:italic}
-  .quote .q span{color:var(--brass)}
-  .quote .by{color:var(--muted);margin-top:22px;font-size:.92rem}
-  @media(max-width:860px){.process{grid-template-columns:1fr;gap:40px}}
+  /* ——— FORMULES : bandeaux horizontaux ——— */
+  .tiers{margin-top:46px;display:flex;flex-direction:column;gap:16px}
+  .tier{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;
+    border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3vw,32px) clamp(26px,3.5vw,40px);
+    background:var(--bg2);transition:.45s cubic-bezier(.22,1,.36,1)}
+  .tier:hover{transform:translateX(8px);border-color:var(--brass);box-shadow:0 40px 70px -50px rgba(0,0,0,.85)}
+  .tier.feat{background:linear-gradient(110deg,var(--panel),var(--bg2));border-color:var(--brass)}
+  .tier .tname{font-family:var(--serif);font-weight:500;font-size:1.55rem;display:flex;align-items:center;gap:14px}
+  .tier .badge{font-size:.66rem;letter-spacing:1.5px;text-transform:uppercase;color:#06231a;font-weight:600;
+    background:linear-gradient(120deg,var(--em),var(--em2));padding:4px 11px;border-radius:30px}
+  .tier .tdesc{color:var(--muted);font-size:.94rem;margin:6px 0 14px}
+  .tier .feats{display:flex;gap:8px;flex-wrap:wrap}
+  .tier .feats span{font-size:.77rem;border:1px solid var(--line);border-radius:30px;padding:5px 12px;color:var(--txt);display:flex;align-items:center;gap:7px}
+  .tier .feats span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--em2);flex-shrink:0}
+  .tier .right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:14px;white-space:nowrap}
+  .tier .price{font-family:var(--serif);font-size:2rem;color:var(--brass2);line-height:1}
+  .tier .price small{font-family:var(--sans);font-size:.74rem;color:var(--muted);font-weight:400;letter-spacing:.3px}
+  .tier .pick{border:1px solid var(--brass);color:var(--brass2);padding:11px 24px;border-radius:30px;transition:.3s;font-weight:500;font-size:.9rem}
+  .tier .pick:hover{background:var(--brass);color:#0c1a14}
+  .tier.feat .pick{background:linear-gradient(120deg,var(--em),var(--em2));border-color:transparent;color:#06231a;font-weight:600}
+  @media(max-width:780px){.tier{grid-template-columns:1fr;gap:20px}.tier .right{align-items:flex-start;text-align:left}.tier .pick{align-self:stretch;text-align:center}}
 
-  .contact{text-align:center;border:1px solid var(--line);border-radius:28px;padding:clamp(48px,8vw,90px) clamp(24px,5vw,60px);
-    background:radial-gradient(120% 120% at 50% 0,rgba(47,174,122,.16),transparent 55%),var(--bg2)}
-  .contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,6vw,3.8rem);letter-spacing:-.5px}
-  .contact h2 em{font-style:italic;color:var(--brass)}
-  .contact p{color:var(--muted);max-width:480px;margin:18px auto 0;font-size:1.08rem}
+  /* ——— MÉTHODE : frise horizontale ——— */
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,30px);margin-top:50px;position:relative}
+  .flow::before{content:"";position:absolute;top:7px;left:8%;right:8%;height:1px;
+    background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 16px)}
+  .fstep{position:relative}
+  .fstep .dot{width:15px;height:15px;border-radius:50%;background:var(--em2);box-shadow:0 0 0 5px rgba(72,211,154,.12);position:relative;z-index:1;margin-bottom:26px;transition:.4s}
+  .fstep:hover .dot{box-shadow:0 0 0 7px rgba(72,211,154,.2);transform:scale(1.15)}
+  .fstep .n{font-family:var(--serif);font-style:italic;color:var(--brass);font-size:1.05rem}
+  .fstep h3{font-family:var(--serif);font-weight:500;font-size:1.22rem;margin:4px 0 7px}
+  .fstep p{color:var(--muted);font-size:.91rem}
+  @media(max-width:680px){.flow{grid-template-columns:1fr 1fr;gap:32px}.flow::before{display:none}}
+  @media(max-width:420px){.flow{grid-template-columns:1fr}}
+
+  /* ——— CTA asymétrique ——— */
+  .cta-band{display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center;
+    border:1px solid var(--line);border-radius:28px;padding:clamp(38px,5vw,62px) clamp(28px,4.5vw,58px);
+    background:radial-gradient(130% 180% at 0 0,rgba(47,174,122,.18),transparent 52%),var(--bg2)}
+  .cta-band h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4.6vw,3rem);letter-spacing:-.5px;line-height:1.1}
+  .cta-band h2 em{font-style:italic;color:var(--brass)}
+  .cta-band p{color:var(--muted);margin-top:12px;max-width:44ch;font-size:1.04rem}
+  .cta-band .actions{display:flex;flex-direction:column;gap:12px;white-space:nowrap}
+  @media(max-width:760px){.cta-band{grid-template-columns:1fr;gap:26px}.cta-band .actions{flex-direction:row;flex-wrap:wrap}}
 
   /* ——— or brillant ——— */
-  .kicker,.kick2,.logo em,.step .i,.quote .q span,.contact h2 em{
+  .kicker,.kick2,.logo em,.prow .idx,.fstep .n,.cta-band h2 em{
     background-image:linear-gradient(100deg,#b8923f 0%,#d6b878 28%,#fff4cf 47%,#f7e6b0 53%,#d6b878 72%,#b8923f 100%);
     background-size:250% 100%;-webkit-background-clip:text;background-clip:text;
     -webkit-text-fill-color:transparent;color:transparent;animation:goldsheen 5.5s linear infinite}
-  .kick2{animation-delay:.6s}.step .i{animation-delay:.9s}.quote .q span{animation-delay:1.2s}.contact h2 em{animation-delay:.4s}
+  .kick2{animation-delay:.6s}.fstep .n{animation-delay:.9s}.cta-band h2 em{animation-delay:.4s}
   @keyframes goldsheen{0%{background-position:170% 0}100%{background-position:-170% 0}}
   h1 em{background-image:linear-gradient(100deg,var(--em2) 0%,var(--em2) 26%,#fff6d8 46%,var(--brass2) 60%,var(--brass2) 100%);
     background-size:230% 100%;animation:goldsheen 7s linear infinite}
@@ -140,18 +158,14 @@
   .nav .links a:hover{transform:translateY(-1px)}
   .logo .leaf{transition:transform .5s cubic-bezier(.34,1.4,.5,1)}
   .logo:hover .leaf{transform:rotate(-12deg) scale(1.12)}
-  .step h3,.step .i{transition:color .3s,transform .4s cubic-bezier(.34,1.4,.5,1)}
-  .step:hover h3{color:var(--brass2)}
-  .step:hover .i{transform:translateX(5px) scale(1.1)}
-  /* boutons : reflet qui traverse au survol */
   .solid,.ghost,.btn,.pick{position:relative;overflow:hidden;isolation:isolate}
   .solid::before,.ghost::before,.btn::before,.pick::before{content:"";position:absolute;top:0;left:-160%;width:75%;height:100%;z-index:1;
     background:linear-gradient(100deg,transparent,rgba(255,247,222,.55),transparent);transform:skewX(-20deg);
     transition:left .7s cubic-bezier(.22,1,.36,1);pointer-events:none}
   .solid:hover::before,.ghost:hover::before,.btn:hover::before,.pick:hover::before{left:170%}
-  .solid,.ghost,.btn,.offer,.formula{will-change:transform}
+  .solid,.ghost,.btn,.prow,.tier,.fstep{will-change:transform}
 
-  /* ——— apparitions retravaillées ——— */
+  /* ——— apparitions ——— */
   .rv{opacity:0;transform:translateY(30px);filter:blur(7px);
     transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),filter .8s ease}
   .rv.in{opacity:1;transform:none;filter:blur(0)}
@@ -159,8 +173,8 @@
   .rvf.in{opacity:1;filter:blur(0)}
   @media(prefers-reduced-motion:reduce){
     .rv,.rvf{opacity:1!important;transform:none!important;filter:none!important;transition:none}
-    .kicker,.kick2,.logo em,.step .i,.quote .q span,.contact h2 em,h1 em{animation:none}
-    .kicker,.kick2,.logo em,.step .i,.quote .q span,.contact h2 em{-webkit-text-fill-color:var(--brass);color:var(--brass)}
+    .kicker,.kick2,.logo em,.prow .idx,.fstep .n,.cta-band h2 em,h1 em{animation:none}
+    .kicker,.kick2,.logo em,.prow .idx,.fstep .n,.cta-band h2 em{-webkit-text-fill-color:var(--brass);color:var(--brass)}
   }
 
   footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:38px 0;margin-top:20px}
@@ -180,138 +194,127 @@
     <a class="logo" href="index.html">
       <svg class="leaf" viewBox="0 0 24 24" fill="none"><path d="M12 22V8M12 8c0-3 2-5 5-5 0 4-2 6-5 6M12 12c0-2.5-2-4-4.5-4 0 3 2 4.5 4.5 4.5" stroke="#d2b87c" stroke-width="1.5" stroke-linecap="round"/></svg>
       Root<em>Connect</em></a>
-    <div class="links"><a class="active" href="#top">Services</a><a href="index.html#work">Réalisations</a><a href="#process">Méthode</a><a href="#contact">Contact</a></div>
+    <div class="links"><a class="active" href="#top">Services</a><a href="index.html#work">Réalisations</a><a href="#flow">Méthode</a><a href="#contact">Contact</a></div>
     <a class="btn" href="#contact"><span class="d-full">Demander un devis</span><span class="d-short">Devis →</span></a>
   </div></nav>
 
-  <header id="top"><div class="wrap">
-    <div class="kicker">Services</div>
-    <h1>Votre site,<br><em>de A à Z.</em></h1>
-    <p class="lead">De la première esquisse jusqu'à la mise en ligne, Root Connect prend en charge <b>l'intégralité de votre site web</b> — design, développement, déploiement et suivi.</p>
-    <div class="cta">
-      <a class="solid" href="#contact">Demander un devis</a>
-      <a class="ghost" href="index.html#work">Voir les réalisations</a>
+  <div class="shero" id="top"><div class="wrap">
+    <div class="topline">
+      <span class="kicker">Services</span>
+      <span class="topmeta">Design · Dév · Mise en ligne · Suivi</span>
     </div>
-  </div></header>
+    <h1>Votre site,<br>pensé <em>de A à Z.</em></h1>
+    <div class="hrow">
+      <p class="lead">De la première esquisse jusqu'à la mise en ligne, Root Connect prend en charge <b>l'intégralité de votre site web</b>. Vous n'avez qu'une chose à faire : me parler de votre métier.</p>
+      <div class="cta">
+        <a class="solid" href="#contact">Demander un devis</a>
+        <a class="ghost" href="index.html#work">Voir les réalisations</a>
+      </div>
+    </div>
+  </div></div>
 
   <section id="offers"><div class="wrap">
-    <div class="center">
+    <div class="shead">
+      <span class="num">01 — 06</span>
       <div class="kick2">Prestations</div>
       <h2 class="h2">Ce que je crée pour vous</h2>
       <p class="sub">Chaque projet pioche dans ces prestations, assemblées sur-mesure selon votre métier.</p>
     </div>
-    <div class="offers">
-      <div class="offer">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.5L19.5 10l-5.6 1.5L12 17l-1.9-5.5L4.5 10l5.6-1.5z"/><circle cx="18.5" cy="5.5" r="1.1" fill="currentColor" stroke="none"/></svg></div>
-        <h3>Direction artistique</h3>
-        <p>On repart de zéro pour une identité qui vous ressemble — pas de template recyclé.</p>
-        <ul><li>Plusieurs ambiances au choix</li><li>Couleurs, typographies, ton</li><li>Une image cohérente partout</li></ul>
+    <div class="prest">
+      <div class="prow">
+        <div class="idx">01</div>
+        <div class="mid"><h3>Direction artistique</h3><p>On repart de zéro pour une identité qui vous ressemble — jamais de template recyclé.</p>
+          <div class="chips"><span>Ambiances au choix</span><span>Couleurs &amp; typo</span><span>Image cohérente</span></div></div>
+        <div class="arrow">→</div>
       </div>
-      <div class="offer">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4"/></svg></div>
-        <h3>Développement sur-mesure</h3>
-        <p>Un site rapide, fluide et soigné dans le moindre détail, codé proprement à la main.</p>
-        <ul><li>100% responsive (mobile inclus)</li><li>Temps de chargement optimisés</li><li>Animations subtiles</li></ul>
+      <div class="prow">
+        <div class="idx">02</div>
+        <div class="mid"><h3>Développement sur-mesure</h3><p>Un site rapide, fluide et soigné dans le moindre détail, codé proprement à la main.</p>
+          <div class="chips"><span>100% responsive</span><span>Chargement rapide</span><span>Animations</span></div></div>
+        <div class="arrow">→</div>
       </div>
-      <div class="offer">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M6.5 7h.01M9 7h.01"/></svg></div>
-        <h3>Site vitrine</h3>
-        <p>Présentez votre activité, vos offres et vos coordonnées, clairement et avec style.</p>
-        <ul><li>Pages pensées pour vous</li><li>Formulaire de contact</li><li>Carte, horaires, réseaux</li></ul>
+      <div class="prow">
+        <div class="idx">03</div>
+        <div class="mid"><h3>Site vitrine</h3><p>Présentez votre activité, vos offres et vos coordonnées — clairement et avec style.</p>
+          <div class="chips"><span>Pages sur-mesure</span><span>Formulaire</span><span>Carte &amp; horaires</span></div></div>
+        <div class="arrow">→</div>
       </div>
-      <div class="offer">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 16M4 20v-4h4"/></svg></div>
-        <h3>Refonte de site</h3>
-        <p>Votre site a vieilli (Wix, vieux modèle…) ? On le modernise sans rien perdre.</p>
-        <ul><li>Reprise de vos contenus</li><li>Design entièrement neuf</li><li>Migration en douceur</li></ul>
+      <div class="prow">
+        <div class="idx">04</div>
+        <div class="mid"><h3>Refonte de site</h3><p>Votre site a vieilli (Wix, vieux modèle…) ? On le modernise sans rien perdre.</p>
+          <div class="chips"><span>Reprise contenu</span><span>Design neuf</span><span>Migration</span></div></div>
+        <div class="arrow">→</div>
       </div>
-      <div class="offer">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.4A3.5 3.5 0 0 1 17 18z"/><path d="M12 16v-5M9.8 12.6L12 10.4l2.2 2.2"/></svg></div>
-        <h3>Mise en ligne &amp; hébergement</h3>
-        <p>Je m'occupe de toute la technique pour que votre site soit en ligne, simplement.</p>
-        <ul><li>Nom de domaine</li><li>Hébergement &amp; HTTPS</li><li>Déploiement complet</li></ul>
+      <div class="prow">
+        <div class="idx">05</div>
+        <div class="mid"><h3>Mise en ligne &amp; hébergement</h3><p>Je m'occupe de toute la technique pour que votre site soit en ligne, simplement.</p>
+          <div class="chips"><span>Nom de domaine</span><span>Hébergement</span><span>HTTPS</span></div></div>
+        <div class="arrow">→</div>
       </div>
-      <div class="offer">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
-        <h3>Suivi &amp; évolutions</h3>
-        <p>Votre site vit avec votre activité : ajustements, ajouts et corrections quand il faut.</p>
-        <ul><li>Mises à jour de contenu</li><li>Nouvelles pages</li><li>Disponible &amp; réactif</li></ul>
+      <div class="prow">
+        <div class="idx">06</div>
+        <div class="mid"><h3>Suivi &amp; évolutions</h3><p>Votre site vit avec votre activité : ajustements, ajouts et corrections quand il faut.</p>
+          <div class="chips"><span>Mises à jour</span><span>Nouvelles pages</span><span>Réactif</span></div></div>
+        <div class="arrow">→</div>
       </div>
     </div>
   </div></section>
 
-  <section id="formulas"><div class="wrap">
-    <div class="center">
+  <section id="tiers"><div class="wrap">
+    <div class="shead">
       <div class="kick2">Formules</div>
       <h2 class="h2">Des offres claires</h2>
       <p class="sub">Trois points de départ — chaque projet reste ajusté sur devis selon vos besoins réels.</p>
     </div>
-    <div class="formulas">
-      <div class="formula">
-        <div class="fname">Essentiel</div>
-        <div class="price">490&nbsp;€ <small>à partir de</small></div>
-        <p class="fdesc">Une page unique, percutante. Idéal pour lancer votre activité.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>1 page sur-mesure (landing)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Responsive mobile + desktop</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Formulaire de contact</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Mise en ligne incluse</li>
-        </ul>
-        <a class="pick" href="#contact">Demander un devis</a>
+    <div class="tiers">
+      <div class="tier">
+        <div class="left">
+          <div class="tname">Essentiel</div>
+          <p class="tdesc">Une page unique et percutante. Idéal pour lancer votre activité.</p>
+          <div class="feats"><span>1 page sur-mesure</span><span>Responsive</span><span>Formulaire</span><span>Mise en ligne</span></div>
+        </div>
+        <div class="right"><div class="price">490&nbsp;€ <small>à partir de</small></div><a class="pick" href="#contact">Demander un devis</a></div>
       </div>
-      <div class="formula feature">
-        <div class="badge">Le plus choisi</div>
-        <div class="fname">Vitrine</div>
-        <div class="price">890&nbsp;€ <small>à partir de</small></div>
-        <p class="fdesc">Un vrai site multi-pages pour présenter toute votre activité.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Jusqu'à 5 pages</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Plusieurs ambiances au choix</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Référencement de base</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Domaine + hébergement 1 an</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Formulaire de contact</li>
-        </ul>
-        <a class="pick" href="#contact">Demander un devis</a>
+      <div class="tier feat">
+        <div class="left">
+          <div class="tname">Vitrine <span class="badge">Le plus choisi</span></div>
+          <p class="tdesc">Un vrai site multi-pages pour présenter toute votre activité.</p>
+          <div class="feats"><span>Jusqu'à 5 pages</span><span>Ambiances au choix</span><span>Référencement de base</span><span>Domaine + hébergement 1 an</span><span>Formulaire</span></div>
+        </div>
+        <div class="right"><div class="price">890&nbsp;€ <small>à partir de</small></div><a class="pick" href="#contact">Demander un devis</a></div>
       </div>
-      <div class="formula">
-        <div class="fname">Sur-mesure</div>
-        <div class="price">Sur devis</div>
-        <p class="fdesc">Un projet ambitieux avec des besoins spécifiques. On en parle.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Pages illimitées</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Fonctionnalités spécifiques</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Animations avancées</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Suivi &amp; évolutions inclus</li>
-        </ul>
-        <a class="pick" href="#contact">En discuter</a>
+      <div class="tier">
+        <div class="left">
+          <div class="tname">Sur-mesure</div>
+          <p class="tdesc">Un projet ambitieux avec des besoins spécifiques. On en parle ensemble.</p>
+          <div class="feats"><span>Pages illimitées</span><span>Fonctions spécifiques</span><span>Animations avancées</span><span>Suivi inclus</span></div>
+        </div>
+        <div class="right"><div class="price">Sur devis</div><a class="pick" href="#contact">En discuter</a></div>
       </div>
     </div>
   </div></section>
 
-  <section id="process"><div class="wrap">
-    <div class="process">
-      <div>
-        <div class="kick2">Méthode</div>
-        <h2 class="h2" style="margin-bottom:18px">Comment ça se passe</h2>
-        <div class="steps">
-          <div class="step"><div class="i">i</div><div><h3>On échange</h3><p>Votre métier, vos clients, votre message. On cadre tout, devis clair.</p></div></div>
-          <div class="step"><div class="i">ii</div><div><h3>Je propose</h3><p>Plusieurs directions artistiques. Vous choisissez celle qui vous parle.</p></div></div>
-          <div class="step"><div class="i">iii</div><div><h3>Je construis</h3><p>Le site complet, responsive. Des allers-retours jusqu'au bon résultat.</p></div></div>
-          <div class="step"><div class="i">iv</div><div><h3>En ligne</h3><p>Mise en ligne, domaine, suivi. Prêt à accueillir vos clients.</p></div></div>
-        </div>
-      </div>
-      <div class="quote">
-        <div class="q">« Vous m'expliquez votre métier, je m'occupe de <span>tout le reste</span> — vous n'avez pas une seule ligne de code à écrire. »</div>
-        <div class="by">— La promesse Root Connect</div>
-      </div>
+  <section id="flow"><div class="wrap">
+    <div class="shead">
+      <div class="kick2">Méthode</div>
+      <h2 class="h2">Comment ça se passe</h2>
+      <p class="sub">Quatre étapes simples, sans jargon — vous n'écrivez pas une ligne de code.</p>
+    </div>
+    <div class="flow">
+      <div class="fstep"><div class="dot"></div><div class="n">i</div><h3>On échange</h3><p>Votre métier, vos clients, votre message. On cadre tout, devis clair.</p></div>
+      <div class="fstep"><div class="dot"></div><div class="n">ii</div><h3>Je propose</h3><p>Plusieurs directions artistiques. Vous choisissez celle qui vous parle.</p></div>
+      <div class="fstep"><div class="dot"></div><div class="n">iii</div><h3>Je construis</h3><p>Le site complet, responsive. Des allers-retours jusqu'au bon résultat.</p></div>
+      <div class="fstep"><div class="dot"></div><div class="n">iv</div><h3>En ligne</h3><p>Mise en ligne, domaine, suivi. Prêt à accueillir vos clients.</p></div>
     </div>
   </div></section>
 
   <section id="contact"><div class="wrap">
-    <div class="contact">
-      <h2>Un projet <em>en tête&nbsp;?</em></h2>
-      <p>Décrivez-moi votre besoin en deux lignes — je vous réponds avec une proposition claire.</p>
-      <div class="cta" style="margin-top:34px">
+    <div class="cta-band">
+      <div>
+        <h2>Un projet <em>en tête&nbsp;?</em></h2>
+        <p>Décrivez-moi votre besoin en deux lignes — je vous réponds avec une proposition claire.</p>
+      </div>
+      <div class="actions">
         <a class="solid" href="mailto:contact@root-connect.fr">contact@root-connect.fr</a>
         <a class="ghost" href="index.html">← Retour à l'accueil</a>
       </div>
@@ -370,7 +373,7 @@
       });
 
       var endpoints=base.map(function(s){return {x:s.x2,y:s.y2,g:s.g1/gMax};});
-      var anchorEls=[].slice.call(document.querySelectorAll('.offers,.formulas,.steps,.quote,.contact'));
+      var anchorEls=[].slice.call(document.querySelectorAll('.prow,.tiers,.flow,.cta-band'));
       var hooks=anchorEls.map(function(el){
         var p=document.createElementNS(SVGNS,'path');
         p.setAttribute('class','hook'); p.setAttribute('pathLength','1');
@@ -380,14 +383,14 @@
         return {el:el,path:p,node:c,g0:1,g1:1};
       });
 
-      var revSel='header .kicker,header h1,header .lead,header .cta,.kick2,.h2,.sub,.offer,.formula,.steps,.quote,.contact';
+      var revSel='.shero .kicker,.shero h1,.shero .lead,.shero .cta,.kick2,.h2,.sub,.prow,.tier,.fstep,.cta-band';
       [].slice.call(document.querySelectorAll(revSel)).forEach(function(el){
-        el.classList.add((el.classList.contains('offer')||el.classList.contains('formula'))?'rvf':'rv');
+        el.classList.add((el.classList.contains('prow')||el.classList.contains('tier')||el.classList.contains('fstep'))?'rvf':'rv');
       });
       hooks.forEach(function(h){
         var els=[];
         if(h.el.classList.contains('rv')||h.el.classList.contains('rvf')) els.push(h.el);
-        [].slice.call(h.el.querySelectorAll('.offer,.formula')).forEach(function(d){els.push(d);});
+        [].slice.call(h.el.querySelectorAll('.tier,.fstep')).forEach(function(d){els.push(d);});
         h.revEls=els;
         els.forEach(function(e){e.__hd=1;});
       });
