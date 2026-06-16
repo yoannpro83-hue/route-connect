@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Root Connect — Sites web sur-mesure</title>
-<meta name="description" content="Root Connect — création de sites web sur-mesure. Des sites qui prennent racine et connectent votre activité à vos clients." />
+<title>Services — Root Connect</title>
+<meta name="description" content="Root Connect — design, développement, mise en ligne et suivi de votre site web sur-mesure. Prestations détaillées et formules claires." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -32,31 +32,24 @@
   .nav .links{display:flex;gap:32px;font-size:.93rem;color:var(--muted)}
   .nav .links a{transition:color .25s;position:relative}
   .nav .links a:hover{color:var(--brass2)}
+  .nav .links a.active{color:var(--brass2)}
   .btn{font-size:.9rem;border:1px solid var(--brass);color:var(--brass2);padding:10px 20px;border-radius:30px;transition:.3s;white-space:nowrap}
   .btn:hover{background:var(--brass);color:#0c1a14}
   .btn .d-short{display:none}
   @media(max-width:760px){.nav .links{display:none}.logo{font-size:1.18rem}.btn{font-size:.84rem;padding:9px 15px}.btn .d-full{display:none}.btn .d-short{display:inline}}
 
-  header{position:relative;z-index:1;padding:clamp(64px,11vw,130px) 0 clamp(40px,7vw,80px);text-align:center}
+  header{position:relative;z-index:1;padding:clamp(64px,11vw,130px) 0 clamp(40px,7vw,70px);text-align:center}
   .kicker{font-size:.82rem;letter-spacing:3px;text-transform:uppercase;color:var(--brass);margin-bottom:22px}
   h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,8vw,5.6rem);line-height:1.12;letter-spacing:-1px}
   h1 em{display:inline-block;padding:.04em .06em .12em;font-style:italic;color:transparent;
     background:linear-gradient(120deg,var(--em2),var(--brass2));-webkit-background-clip:text;background-clip:text}
-  .lead{color:var(--muted);font-size:clamp(1.06rem,2.3vw,1.3rem);max-width:600px;margin:28px auto 0}
+  .lead{color:var(--muted);font-size:clamp(1.06rem,2.3vw,1.3rem);max-width:620px;margin:28px auto 0}
   .lead b{color:var(--txt);font-weight:500}
   .cta{display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap}
   .solid{background:linear-gradient(120deg,var(--em),var(--em2));color:#06231a;font-weight:600;padding:14px 28px;border-radius:30px;transition:.3s;box-shadow:0 16px 40px -16px rgba(47,174,122,.7)}
   .solid:hover{transform:translateY(-3px);box-shadow:0 22px 50px -18px rgba(47,174,122,.9)}
   .ghost{padding:14px 26px;border:1px solid var(--line);border-radius:30px;color:var(--txt);transition:.3s}
   .ghost:hover{border-color:var(--brass)}
-
-  /* root illustration */
-  .roots{margin:60px auto 0;max-width:780px}
-  .roots svg{width:100%;height:auto;display:block;overflow:visible}
-  .roots path,.roots line{stroke-dasharray:1;stroke-dashoffset:1;animation:grow 2.6s ease forwards}
-  @keyframes grow{to{stroke-dashoffset:0}}
-  .roots circle{opacity:0;animation:pop .5s ease forwards}
-  @keyframes pop{to{opacity:1}}
 
   /* full-page root system behind everything */
   .rootbg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.5}
@@ -65,7 +58,6 @@
     stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .35s ease}
   .rootbg path.leaf{stroke:var(--brass)}
   .rootbg circle{opacity:0;transition:opacity .5s ease}
-  /* branches d'accroche : reliées au reste, fixées sur les blocs */
   .rootbg path.hook{stroke:var(--em2)}
   @media(prefers-reduced-motion:reduce){.rootbg path{stroke-dashoffset:0}.rootbg circle{opacity:1}}
 
@@ -75,32 +67,40 @@
   .h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.5px;margin:14px 0 0}
   .sub{color:var(--muted);max-width:560px;margin:16px auto 0;font-size:1.06rem}
 
-  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:54px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--line)}
-  .svc{background:var(--bg2);padding:38px 30px;transition:.4s}
-  .svc:hover{background:var(--panel)}
-  .svc .num{font-family:var(--serif);font-style:italic;font-size:2.2rem;color:var(--brass)}
-  .svc h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;margin:10px 0 10px}
-  .svc p{color:var(--muted);font-size:.96rem}
-  @media(max-width:780px){.services{grid-template-columns:1fr}}
+  /* prestations */
+  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px}
+  .offer{border:1px solid var(--line);border-radius:20px;padding:32px 28px;background:var(--bg2);transition:.5s cubic-bezier(.22,1,.36,1)}
+  .offer:hover{transform:translateY(-8px);border-color:var(--brass);box-shadow:0 50px 80px -50px rgba(0,0,0,.85)}
+  .offer .ic{width:48px;height:48px;border:1px solid var(--line);border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--brass2);transition:.4s}
+  .offer:hover .ic{border-color:var(--brass);background:rgba(210,184,124,.1);transform:translateY(-2px) rotate(-4deg)}
+  .offer .ic svg{width:24px;height:24px}
+  .offer h3{font-family:var(--serif);font-weight:500;font-size:1.35rem;margin-bottom:10px;transition:color .35s}
+  .offer:hover h3{color:var(--brass2)}
+  .offer>p{color:var(--muted);font-size:.96rem;margin-bottom:18px}
+  .offer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .offer li{font-size:.9rem;display:flex;align-items:center;gap:10px}
+  .offer li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--em2);flex-shrink:0;box-shadow:0 0 8px rgba(72,211,154,.5)}
+  @media(max-width:880px){.offers{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.offers{grid-template-columns:1fr}}
 
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:54px}
-  .case{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--bg2);transition:.5s cubic-bezier(.22,1,.36,1);display:block}
-  .case:hover{transform:translateY(-8px);box-shadow:0 50px 80px -50px rgba(0,0,0,.85);border-color:var(--brass)}
-  .thumb{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;position:relative}
-  .thumb .t{font-family:var(--serif);font-size:1.7rem;font-weight:500;text-align:center;padding:20px;line-height:1.1}
-  .thumb .s{display:block;font-family:var(--sans);font-size:.74rem;letter-spacing:2px;text-transform:uppercase;margin-top:10px;font-weight:500}
-  .info{padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line)}
-  .info h3{font-family:var(--serif);font-weight:500;font-size:1.18rem}
-  .info .tags{color:var(--muted);font-size:.82rem;margin-top:2px}
-  .info .arrow{color:var(--brass);font-size:1.2rem;transition:.3s}
-  .case:hover .arrow{transform:translate(4px,-4px)}
-  .th1{background:radial-gradient(120% 100% at 30% 0,#1c1838,#12101f 60%,#0c0a17)}.th1 .t{color:#f3eee2}.th1 .s{color:#e7c179}
-  .th2{background:#efe4c8}.th2 .t{color:#14463b}.th2 .s{color:#9c7b3f}
-  .th3{background:radial-gradient(120% 100% at 70% 10%,#2a1230,#160a1c 70%)}.th3 .t{color:#f6e8c8}.th3 .s{color:#d8a0e0}
-  .th4{background:linear-gradient(160deg,#7a1f2b,#3d0f16)}.th4 .t{color:#f7e9d0}.th4 .s{color:#e8b9a0}
-  .th5{background:linear-gradient(160deg,#0d3b3a,#06201f)}.th5 .t{color:#d8f3ee}.th5 .s{color:#7fd9c8}
-  .th6{background:linear-gradient(160deg,#23252b,#121316)}.th6 .t{color:#eef0f2}.th6 .s{color:#9aa3ad}
-  @media(max-width:780px){.grid{grid-template-columns:1fr}}
+  /* formules */
+  .formulas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px;align-items:stretch}
+  .formula{border:1px solid var(--line);border-radius:22px;padding:34px 30px;background:var(--bg2);display:flex;flex-direction:column;transition:.5s cubic-bezier(.22,1,.36,1)}
+  .formula:hover{transform:translateY(-8px);box-shadow:0 50px 80px -50px rgba(0,0,0,.85)}
+  .formula.feature{background:linear-gradient(180deg,var(--panel),var(--bg2));border-color:var(--brass);box-shadow:0 30px 70px -40px rgba(0,0,0,.7)}
+  .formula .badge{align-self:flex-start;font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:#06231a;
+    background:linear-gradient(120deg,var(--em),var(--em2));padding:5px 13px;border-radius:30px;margin-bottom:16px;font-weight:600}
+  .formula .fname{font-family:var(--serif);font-weight:500;font-size:1.5rem}
+  .formula .price{font-family:var(--serif);font-size:2.1rem;color:var(--brass2);margin:8px 0 2px}
+  .formula .price small{font-family:var(--sans);font-size:.78rem;color:var(--muted);font-weight:400;letter-spacing:.3px}
+  .formula .fdesc{color:var(--muted);font-size:.92rem;margin:6px 0 22px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .formula ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;flex:1}
+  .formula li{font-size:.92rem;display:flex;align-items:flex-start;gap:11px}
+  .formula li svg{width:17px;height:17px;flex-shrink:0;margin-top:2px;stroke:var(--em2)}
+  .formula .pick{text-align:center;border:1px solid var(--brass);color:var(--brass2);padding:13px;border-radius:30px;transition:.3s;font-weight:500}
+  .formula .pick:hover{background:var(--brass);color:#0c1a14}
+  .formula.feature .pick{background:linear-gradient(120deg,var(--em),var(--em2));border-color:transparent;color:#06231a;font-weight:600;box-shadow:0 16px 36px -18px rgba(47,174,122,.8)}
+  @media(max-width:880px){.formulas{grid-template-columns:1fr;max-width:430px;margin-left:auto;margin-right:auto}}
 
   .process{display:grid;grid-template-columns:1.1fr 1fr;gap:54px;align-items:center}
   .steps{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:24px;
@@ -122,50 +122,36 @@
   .contact h2 em{font-style:italic;color:var(--brass)}
   .contact p{color:var(--muted);max-width:480px;margin:18px auto 0;font-size:1.08rem}
 
-  /* ——— or brillant : balayage lumineux sur tout ce qui est doré ——— */
-  .kicker,.kick2,.logo em,.svc .num,.step .i,.quote .q span,.contact h2 em{
+  /* ——— or brillant ——— */
+  .kicker,.kick2,.logo em,.step .i,.quote .q span,.contact h2 em{
     background-image:linear-gradient(100deg,#b8923f 0%,#d6b878 28%,#fff4cf 47%,#f7e6b0 53%,#d6b878 72%,#b8923f 100%);
     background-size:250% 100%;-webkit-background-clip:text;background-clip:text;
     -webkit-text-fill-color:transparent;color:transparent;animation:goldsheen 5.5s linear infinite}
-  .kick2{animation-delay:.6s}.svc .num{animation-delay:.3s}.step .i{animation-delay:.9s}
-  .quote .q span{animation-delay:1.2s}.contact h2 em{animation-delay:.4s}
+  .kick2{animation-delay:.6s}.step .i{animation-delay:.9s}.quote .q span{animation-delay:1.2s}.contact h2 em{animation-delay:.4s}
   @keyframes goldsheen{0%{background-position:170% 0}100%{background-position:-170% 0}}
-  /* le grand titre garde son dégradé vert→or mais reçoit un reflet qui passe */
   h1 em{background-image:linear-gradient(100deg,var(--em2) 0%,var(--em2) 26%,#fff6d8 46%,var(--brass2) 60%,var(--brass2) 100%);
     background-size:230% 100%;animation:goldsheen 7s linear infinite}
 
   /* ——— micro-animations ——— */
   .nav .links a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--brass);
     transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.22,1,.36,1)}
-  .nav .links a:hover::after{transform:scaleX(1);transform-origin:left}
+  .nav .links a:hover::after,.nav .links a.active::after{transform:scaleX(1);transform-origin:left}
   .nav .links a{transition:color .25s,transform .25s}
   .nav .links a:hover{transform:translateY(-1px)}
   .logo .leaf{transition:transform .5s cubic-bezier(.34,1.4,.5,1)}
   .logo:hover .leaf{transform:rotate(-12deg) scale(1.12)}
-  .svc{transition:.45s cubic-bezier(.22,1,.36,1)}
-  .svc .num{display:inline-block;transition:transform .45s cubic-bezier(.34,1.4,.5,1)}
-  .svc:hover{background:var(--panel);box-shadow:inset 0 0 0 1px rgba(210,184,124,.28)}
-  .svc:hover .num{transform:translateY(-4px) scale(1.12)}
-  .svc:hover h3{color:var(--brass2)}
-  .svc h3{transition:color .35s}
   .step h3,.step .i{transition:color .3s,transform .4s cubic-bezier(.34,1.4,.5,1)}
   .step:hover h3{color:var(--brass2)}
   .step:hover .i{transform:translateX(5px) scale(1.1)}
-  /* cartes réalisations : soulèvement + zoom de la vignette */
-  .case:hover{transform:translateY(-10px) scale(1.012);box-shadow:0 60px 90px -50px rgba(0,0,0,.9)}
-  .thumb{transition:transform .65s cubic-bezier(.22,1,.36,1)}
-  .case:hover .thumb{transform:scale(1.06)}
-  .case:hover .info h3{color:var(--brass2)}
-  .info h3{transition:color .35s}
   /* boutons : reflet qui traverse au survol */
-  .solid,.ghost,.btn{position:relative;overflow:hidden;isolation:isolate}
-  .solid::before,.ghost::before,.btn::before{content:"";position:absolute;top:0;left:-160%;width:75%;height:100%;z-index:1;
+  .solid,.ghost,.btn,.pick{position:relative;overflow:hidden;isolation:isolate}
+  .solid::before,.ghost::before,.btn::before,.pick::before{content:"";position:absolute;top:0;left:-160%;width:75%;height:100%;z-index:1;
     background:linear-gradient(100deg,transparent,rgba(255,247,222,.55),transparent);transform:skewX(-20deg);
     transition:left .7s cubic-bezier(.22,1,.36,1);pointer-events:none}
-  .solid:hover::before,.ghost:hover::before,.btn:hover::before{left:170%}
-  .solid,.ghost,.btn,.case,.svc{will-change:transform}
+  .solid:hover::before,.ghost:hover::before,.btn:hover::before,.pick:hover::before{left:170%}
+  .solid,.ghost,.btn,.offer,.formula{will-change:transform}
 
-  /* ——— apparitions retravaillées (fondu + montée + mise au point) ——— */
+  /* ——— apparitions retravaillées ——— */
   .rv{opacity:0;transform:translateY(30px);filter:blur(7px);
     transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),filter .8s ease}
   .rv.in{opacity:1;transform:none;filter:blur(0)}
@@ -173,8 +159,8 @@
   .rvf.in{opacity:1;filter:blur(0)}
   @media(prefers-reduced-motion:reduce){
     .rv,.rvf{opacity:1!important;transform:none!important;filter:none!important;transition:none}
-    .kicker,.kick2,.logo em,.svc .num,.step .i,.quote .q span,.contact h2 em,h1 em{animation:none}
-    .kicker,.kick2,.logo em,.svc .num,.step .i,.quote .q span,.contact h2 em{-webkit-text-fill-color:var(--brass);color:var(--brass)}
+    .kicker,.kick2,.logo em,.step .i,.quote .q span,.contact h2 em,h1 em{animation:none}
+    .kicker,.kick2,.logo em,.step .i,.quote .q span,.contact h2 em{-webkit-text-fill-color:var(--brass);color:var(--brass)}
   }
 
   footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:38px 0;margin-top:20px}
@@ -191,50 +177,114 @@
   </div>
   <a class="back" href="../index.html">← versions</a>
   <nav><div class="wrap nav">
-    <a class="logo" href="#top">
+    <a class="logo" href="index.html">
       <svg class="leaf" viewBox="0 0 24 24" fill="none"><path d="M12 22V8M12 8c0-3 2-5 5-5 0 4-2 6-5 6M12 12c0-2.5-2-4-4.5-4 0 3 2 4.5 4.5 4.5" stroke="#d2b87c" stroke-width="1.5" stroke-linecap="round"/></svg>
       Root<em>Connect</em></a>
-    <div class="links"><a href="services.html">Services</a><a href="#work">Réalisations</a><a href="#process">Méthode</a><a href="#contact">Contact</a></div>
-    <a class="btn" href="#contact"><span class="d-full">Démarrer un projet</span><span class="d-short">Démarrer →</span></a>
+    <div class="links"><a class="active" href="#top">Services</a><a href="index.html#work">Réalisations</a><a href="#process">Méthode</a><a href="#contact">Contact</a></div>
+    <a class="btn" href="#contact"><span class="d-full">Demander un devis</span><span class="d-short">Devis →</span></a>
   </div></nav>
 
   <header id="top"><div class="wrap">
-    <div class="kicker">Création de sites web sur-mesure</div>
-    <h1>Des sites qui<br><em>prennent racine.</em></h1>
-    <p class="lead">Root Connect dessine et développe des <b>sites web élégants</b> qui ancrent votre activité en ligne et la connectent à vos clients.</p>
+    <div class="kicker">Services</div>
+    <h1>Votre site,<br><em>de A à Z.</em></h1>
+    <p class="lead">De la première esquisse jusqu'à la mise en ligne, Root Connect prend en charge <b>l'intégralité de votre site web</b> — design, développement, déploiement et suivi.</p>
     <div class="cta">
-      <a class="solid" href="#work">Voir mes réalisations</a>
-      <a class="ghost" href="#contact">Parler de mon projet</a>
+      <a class="solid" href="#contact">Demander un devis</a>
+      <a class="ghost" href="index.html#work">Voir les réalisations</a>
     </div>
   </div></header>
 
-  <section id="services"><div class="wrap">
+  <section id="offers"><div class="wrap">
     <div class="center">
-      <div class="kick2">Ce que je fais</div>
-      <h2 class="h2">Un accompagnement complet</h2>
-      <p class="sub">De la première idée jusqu'à la mise en ligne, je m'occupe de tout.</p>
+      <div class="kick2">Prestations</div>
+      <h2 class="h2">Ce que je crée pour vous</h2>
+      <p class="sub">Chaque projet pioche dans ces prestations, assemblées sur-mesure selon votre métier.</p>
     </div>
-    <div class="services">
-      <div class="svc"><div class="num">i</div><h3>Direction artistique</h3><p>Plusieurs ambiances proposées au choix. On repart de zéro pour une identité qui vous ressemble.</p></div>
-      <div class="svc"><div class="num">ii</div><h3>Développement</h3><p>Sites rapides et responsive, soignés dans le moindre détail. Du code propre, des animations subtiles.</p></div>
-      <div class="svc"><div class="num">iii</div><h3>Mise en ligne</h3><p>Hébergement, nom de domaine, suivi. Votre site en ligne, sans aucune prise de tête.</p></div>
+    <div class="offers">
+      <div class="offer">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.5L19.5 10l-5.6 1.5L12 17l-1.9-5.5L4.5 10l5.6-1.5z"/><circle cx="18.5" cy="5.5" r="1.1" fill="currentColor" stroke="none"/></svg></div>
+        <h3>Direction artistique</h3>
+        <p>On repart de zéro pour une identité qui vous ressemble — pas de template recyclé.</p>
+        <ul><li>Plusieurs ambiances au choix</li><li>Couleurs, typographies, ton</li><li>Une image cohérente partout</li></ul>
+      </div>
+      <div class="offer">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4"/></svg></div>
+        <h3>Développement sur-mesure</h3>
+        <p>Un site rapide, fluide et soigné dans le moindre détail, codé proprement à la main.</p>
+        <ul><li>100% responsive (mobile inclus)</li><li>Temps de chargement optimisés</li><li>Animations subtiles</li></ul>
+      </div>
+      <div class="offer">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M6.5 7h.01M9 7h.01"/></svg></div>
+        <h3>Site vitrine</h3>
+        <p>Présentez votre activité, vos offres et vos coordonnées, clairement et avec style.</p>
+        <ul><li>Pages pensées pour vous</li><li>Formulaire de contact</li><li>Carte, horaires, réseaux</li></ul>
+      </div>
+      <div class="offer">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 16M4 20v-4h4"/></svg></div>
+        <h3>Refonte de site</h3>
+        <p>Votre site a vieilli (Wix, vieux modèle…) ? On le modernise sans rien perdre.</p>
+        <ul><li>Reprise de vos contenus</li><li>Design entièrement neuf</li><li>Migration en douceur</li></ul>
+      </div>
+      <div class="offer">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.4A3.5 3.5 0 0 1 17 18z"/><path d="M12 16v-5M9.8 12.6L12 10.4l2.2 2.2"/></svg></div>
+        <h3>Mise en ligne &amp; hébergement</h3>
+        <p>Je m'occupe de toute la technique pour que votre site soit en ligne, simplement.</p>
+        <ul><li>Nom de domaine</li><li>Hébergement &amp; HTTPS</li><li>Déploiement complet</li></ul>
+      </div>
+      <div class="offer">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
+        <h3>Suivi &amp; évolutions</h3>
+        <p>Votre site vit avec votre activité : ajustements, ajouts et corrections quand il faut.</p>
+        <ul><li>Mises à jour de contenu</li><li>Nouvelles pages</li><li>Disponible &amp; réactif</li></ul>
+      </div>
     </div>
-    <div class="center" style="margin-top:38px"><a class="ghost" href="services.html">Voir le détail des services &amp; formules →</a></div>
   </div></section>
 
-  <section id="work"><div class="wrap">
+  <section id="formulas"><div class="wrap">
     <div class="center">
-      <div class="kick2">Réalisations</div>
-      <h2 class="h2">Des projets en ligne</h2>
-      <p class="sub">Chaque site avec sa propre direction artistique, pensée sur-mesure.</p>
+      <div class="kick2">Formules</div>
+      <h2 class="h2">Des offres claires</h2>
+      <p class="sub">Trois points de départ — chaque projet reste ajusté sur devis selon vos besoins réels.</p>
     </div>
-    <div class="grid">
-      <a class="case" href="#contact"><div class="thumb th1"><div class="t">Rachel Hermann<span class="s">Voyance · 3 ambiances</span></div></div><div class="info"><div><h3>Rachel Hermann</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
-      <a class="case" href="#contact"><div class="thumb th3"><div class="t">Tania des Anges<span class="s">Voyance · sombre &amp; clair</span></div></div><div class="info"><div><h3>Tania des Anges</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
-      <a class="case" href="#contact"><div class="thumb th2"><div class="t">Brocante du Cœur<span class="s">Association solidaire</span></div></div><div class="info"><div><h3>Brocante du Cœur</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
-      <a class="case" href="#contact"><div class="thumb th4"><div class="t">Trattoria Lucia<span class="s">Restaurant italien</span></div></div><div class="info"><div><h3>Trattoria Lucia</h3><div class="tags">Exemple · Vitrine + menu</div></div><span class="arrow">↗</span></div></a>
-      <a class="case" href="#contact"><div class="thumb th5"><div class="t">Atelier Verde<span class="s">Paysagiste</span></div></div><div class="info"><div><h3>Atelier Verde</h3><div class="tags">Exemple · Portfolio</div></div><span class="arrow">↗</span></div></a>
-      <a class="case" href="#contact"><div class="thumb th6"><div class="t">Nord Studio<span class="s">Coaching &amp; conseil</span></div></div><div class="info"><div><h3>Nord Studio</h3><div class="tags">Exemple · Landing</div></div><span class="arrow">↗</span></div></a>
+    <div class="formulas">
+      <div class="formula">
+        <div class="fname">Essentiel</div>
+        <div class="price">490&nbsp;€ <small>à partir de</small></div>
+        <p class="fdesc">Une page unique, percutante. Idéal pour lancer votre activité.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>1 page sur-mesure (landing)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Responsive mobile + desktop</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Formulaire de contact</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Mise en ligne incluse</li>
+        </ul>
+        <a class="pick" href="#contact">Demander un devis</a>
+      </div>
+      <div class="formula feature">
+        <div class="badge">Le plus choisi</div>
+        <div class="fname">Vitrine</div>
+        <div class="price">890&nbsp;€ <small>à partir de</small></div>
+        <p class="fdesc">Un vrai site multi-pages pour présenter toute votre activité.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Jusqu'à 5 pages</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Plusieurs ambiances au choix</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Référencement de base</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Domaine + hébergement 1 an</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Formulaire de contact</li>
+        </ul>
+        <a class="pick" href="#contact">Demander un devis</a>
+      </div>
+      <div class="formula">
+        <div class="fname">Sur-mesure</div>
+        <div class="price">Sur devis</div>
+        <p class="fdesc">Un projet ambitieux avec des besoins spécifiques. On en parle.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Pages illimitées</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Fonctionnalités spécifiques</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Animations avancées</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"/></svg>Suivi &amp; évolutions inclus</li>
+        </ul>
+        <a class="pick" href="#contact">En discuter</a>
+      </div>
     </div>
   </div></section>
 
@@ -242,7 +292,7 @@
     <div class="process">
       <div>
         <div class="kick2">Méthode</div>
-        <h2 class="h2" style="margin-bottom:18px">Simple &amp; sans jargon</h2>
+        <h2 class="h2" style="margin-bottom:18px">Comment ça se passe</h2>
         <div class="steps">
           <div class="step"><div class="i">i</div><div><h3>On échange</h3><p>Votre métier, vos clients, votre message. On cadre tout, devis clair.</p></div></div>
           <div class="step"><div class="i">ii</div><div><h3>Je propose</h3><p>Plusieurs directions artistiques. Vous choisissez celle qui vous parle.</p></div></div>
@@ -251,19 +301,19 @@
         </div>
       </div>
       <div class="quote">
-        <div class="q">« Un site web, c'est une <span>racine</span> : invisible au départ, mais c'est ce qui fait tenir tout le reste. »</div>
-        <div class="by">— La philosophie Root Connect</div>
+        <div class="q">« Vous m'expliquez votre métier, je m'occupe de <span>tout le reste</span> — vous n'avez pas une seule ligne de code à écrire. »</div>
+        <div class="by">— La promesse Root Connect</div>
       </div>
     </div>
   </div></section>
 
   <section id="contact"><div class="wrap">
     <div class="contact">
-      <h2>On crée votre <em>racine&nbsp;?</em></h2>
-      <p>Un projet, une idée, ou simplement une question — écrivez-moi, je réponds vite.</p>
+      <h2>Un projet <em>en tête&nbsp;?</em></h2>
+      <p>Décrivez-moi votre besoin en deux lignes — je vous réponds avec une proposition claire.</p>
       <div class="cta" style="margin-top:34px">
         <a class="solid" href="mailto:contact@root-connect.fr">contact@root-connect.fr</a>
-        <a class="ghost" href="#top">Retour en haut ↑</a>
+        <a class="ghost" href="index.html">← Retour à l'accueil</a>
       </div>
     </div>
   </div></section>
@@ -279,17 +329,13 @@
       var svg=document.getElementById('rootsvg');
       var W=1200, MAXD=6;
       var base=[], baseNodes=[], natMaxY=0, gMax=0;
-      // PRNG déterministe -> racine identique à chaque chargement
       var seed=20240611;
       function rnd(){seed=(seed*1103515245+12345)&0x7fffffff;return seed/0x7fffffff;}
       function clamp(v,a,b){return v<a?a:(v>b?b:v);}
 
-      // Construction récursive : chaque branche démarre EXACTEMENT au bout de
-      // sa parente -> l'ensemble est un seul organisme entièrement relié.
       function grow(x,y,ang,len,depth,gStart){
         var ex=clamp(x+Math.cos(ang)*len,24,W-24);
         var ey=y+Math.sin(ang)*len;
-        // point de contrôle cintré perpendiculairement -> courbe organique
         var dx=ex-x, dy=ey-y, bow=(rnd()-0.5)*0.6;
         var cx=(x+ex)/2 - dy*bow;
         var cy=(y+ey)/2 + dx*bow;
@@ -298,17 +344,16 @@
         if(ey>natMaxY)natMaxY=ey; if(gEnd>gMax)gMax=gEnd;
         if(depth>=MAXD){ if(rnd()<0.6) baseNodes.push({x:ex,y:ey,g:gEnd,leaf:true}); return; }
         var n=depth===0?3:(depth<=2?(rnd()<0.52?3:2):(rnd()<0.46?2:1));
-        var spread=0.62+depth*0.16;     // s'évase de plus en plus en profondeur
+        var spread=0.62+depth*0.16;
         for(var i=0;i<n;i++){
           var t=n===1?(rnd()-0.5):(i/(n-1)-0.5);
           var a=clamp(ang+t*spread+(rnd()-0.5)*0.18, 0.35, Math.PI-0.35);
           grow(ex,ey,a,len*(0.74+rnd()*0.08),depth+1,gEnd);
         }
-        if(depth===1) baseNodes.push({x:ex,y:ey,g:gEnd,leaf:false}); // jonctions majeures
+        if(depth===1) baseNodes.push({x:ex,y:ey,g:gEnd,leaf:false});
       }
       grow(W/2,0,Math.PI/2,300,0,0);
 
-      // Création des éléments (une seule fois)
       var pathEls=base.map(function(s){
         var p=document.createElementNS(SVGNS,'path');
         p.setAttribute('pathLength','1');
@@ -324,41 +369,30 @@
         return {el:c,g:nd.g/gMax,leaf:nd.leaf};
       });
 
-      // Accroches : depuis une extrémité de racine DÉJÀ poussée (donc visible
-      // et reliée au reste), une branche rejoint le bloc et s'y fixe. Jamais
-      // de morceau détaché.
       var endpoints=base.map(function(s){return {x:s.x2,y:s.y2,g:s.g1/gMax};});
-      var anchorEls=[].slice.call(document.querySelectorAll('.services,.case,.steps,.quote,.contact'));
+      var anchorEls=[].slice.call(document.querySelectorAll('.offers,.formulas,.steps,.quote,.contact'));
       var hooks=anchorEls.map(function(el){
         var p=document.createElementNS(SVGNS,'path');
         p.setAttribute('class','hook'); p.setAttribute('pathLength','1');
         var c=document.createElementNS(SVGNS,'circle');
         c.setAttribute('class','hooknode'); c.setAttribute('fill','#9affc9');
         svg.appendChild(p); svg.appendChild(c);
-        return {el:el,path:p,node:c,g0:1,g1:1,revealed:false};
+        return {el:el,path:p,node:c,g0:1,g1:1};
       });
 
-      // ——— Apparition des contenus ———
-      // Les blocs accrochés par une racine apparaissent QUAND leur racine s'y
-      // fixe (piloté plus bas dans draw). Le reste (titres, textes) apparaît au
-      // scroll classique.
-      var revSel='header .kicker,header h1,header .lead,header .cta,.kick2,.h2,.sub,.svc,.case,.steps,.quote,.contact';
+      var revSel='header .kicker,header h1,header .lead,header .cta,.kick2,.h2,.sub,.offer,.formula,.steps,.quote,.contact';
       [].slice.call(document.querySelectorAll(revSel)).forEach(function(el){
-        el.classList.add((el.classList.contains('svc')||el.classList.contains('case'))?'rvf':'rv');
+        el.classList.add((el.classList.contains('offer')||el.classList.contains('formula'))?'rvf':'rv');
       });
-      // éléments à révéler quand l'accroche se fixe : le bloc + ses cartes internes
       hooks.forEach(function(h){
         var els=[];
         if(h.el.classList.contains('rv')||h.el.classList.contains('rvf')) els.push(h.el);
-        [].slice.call(h.el.querySelectorAll('.svc,.case,.steps,.quote')).forEach(function(d){els.push(d);});
+        [].slice.call(h.el.querySelectorAll('.offer,.formula')).forEach(function(d){els.push(d);});
         h.revEls=els;
-        els.forEach(function(e){e.__hd=1;});  // marqués : pilotés par la racine
+        els.forEach(function(e){e.__hd=1;});
       });
-      // observer de scroll pour tout le reste (non piloté par la racine)
       var ioNodes=[].slice.call(document.querySelectorAll('.rv,.rvf')).filter(function(e){return !e.__hd;});
       if('IntersectionObserver' in window){
-        // réversible : apparaît en entrant, se réinitialise en sortant -> se
-        // rejoue au scroll vers le haut comme vers le bas
         var rio=new IntersectionObserver(function(es){es.forEach(function(e){
           e.target.classList.toggle('in',e.isIntersecting);});},
           {threshold:0.12,rootMargin:'0px 0px -8% 0px'});
@@ -372,10 +406,7 @@
           var r=h.el.getBoundingClientRect();
           var apx=(r.left+window.scrollX+r.width/2)/scale;
           var apy=(r.top+window.scrollY-6)/scale;
-          // progression de scroll quand le bloc entre par le bas de l'écran
-          // (borné à .88 pour que même le dernier bloc puisse se compléter)
           var bp=clamp(0.04+0.98*((r.top+window.scrollY-vh*0.92)/maxs),0,0.88);
-          // extrémité de racine la plus proche, déjà poussée (g<=bp) et au-dessus
           var best=-1,bestD=Infinity,i,ep,ex,ey,dx,dy,d;
           for(i=0;i<endpoints.length;i++){ ep=endpoints[i]; if(ep.g>bp)continue;
             ex=ep.x; ey=ep.y*sy; if(ey>apy+12)continue;
@@ -392,21 +423,18 @@
         });
       }
 
-      // Cale le ratio du SVG sur celui de la page -> échelle UNIFORME (pas de
-      // distorsion) : l'évasement horizontal est conservé tel quel.
       function layout(){
         var pw=document.documentElement.clientWidth||1;
         var ph=document.documentElement.scrollHeight||1;
         var targetH=W*ph/pw;
         var sy=targetH/natMaxY;
-        var scale=pw/W;                 // px par unité (uniforme car ratio calé sur la page)
+        var scale=pw/W;
         svg.setAttribute('viewBox','0 0 '+W+' '+Math.ceil(targetH));
         base.forEach(function(s,i){
           pathEls[i].el.setAttribute('d',
             'M'+s.x1.toFixed(1)+' '+(s.y1*sy).toFixed(1)+
             ' Q'+s.cx.toFixed(1)+' '+(s.cy*sy).toFixed(1)+
             ' '+s.x2.toFixed(1)+' '+(s.y2*sy).toFixed(1));
-          // épaisseur en unités SVG -> px constants après mise à l'échelle
           var dpx=Math.max(0.9,2.2-pathEls[i].depth*0.22);
           pathEls[i].el.setAttribute('stroke-width',(dpx/scale).toFixed(2));
         });
@@ -422,7 +450,7 @@
         ticking=false;
         var max=document.documentElement.scrollHeight-window.innerHeight;
         var raw=max>0?clamp(window.scrollY/max,0,1):1;
-        var p=0.04+0.98*raw;            // tronc déjà amorcé tout en haut
+        var p=0.04+0.98*raw;
         for(var i=0;i<pathEls.length;i++){
           var pe=pathEls[i];
           var local=clamp((p-pe.g0)/Math.max(0.0001,(pe.g1-pe.g0)),0,1);
@@ -436,9 +464,6 @@
           var hl=clamp((p-hk.g0)/Math.max(0.0001,(hk.g1-hk.g0)),0,1);
           hk.path.style.strokeDashoffset=String(1-hl);
           hk.node.style.opacity = hl>=0.85 ? '1' : '0';
-          // le bloc apparaît quand sa racine vient s'y fixer (ou dès qu'il est
-          // bien à l'écran) et se réinitialise quand il sort -> rejoué dans les
-          // deux sens de scroll
           var ih=window.innerHeight, rb=hk.el.getBoundingClientRect();
           var outOfView=rb.bottom<ih*0.06 || rb.top>ih*0.96;
           if(!hk.shown){
@@ -457,7 +482,6 @@
       window.addEventListener('resize',onResize);
       layout(); draw();
     })();
-
   </script>
 </body>
 </html>
