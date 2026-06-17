@@ -121,11 +121,13 @@
   .quote .by{color:var(--muted);margin-top:22px;font-size:.92rem}
   @media(max-width:860px){.process{grid-template-columns:1fr;gap:40px}}
 
-  .contact{text-align:center;border:1px solid var(--line);border-radius:28px;padding:clamp(48px,8vw,90px) clamp(24px,5vw,60px);
-    background:radial-gradient(120% 120% at 50% 0,rgba(47,174,122,.16),transparent 55%),var(--bg2)}
-  .contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,6vw,3.8rem);letter-spacing:-.5px}
-  .contact h2 em{font-style:italic;color:var(--brass)}
-  .contact p{color:var(--muted);max-width:480px;margin:18px auto 0;font-size:1.08rem}
+  .cta-band{display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center;
+    border:1px solid var(--line);border-radius:28px;padding:clamp(38px,5vw,62px) clamp(28px,4.5vw,58px);
+    background:radial-gradient(130% 180% at 0 0,rgba(47,174,122,.18),transparent 52%),var(--bg2)}
+  .cta-band h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4.6vw,3rem);letter-spacing:-.5px;line-height:1.1}
+  .cta-band h2 em{font-style:italic;color:var(--brass)}
+  .cta-band p{color:var(--muted);margin-top:12px;max-width:44ch;font-size:1.04rem}
+  @media(max-width:760px){.cta-band{grid-template-columns:1fr;gap:26px}}
 
   /* ——— or brillant : balayage lumineux sur tout ce qui est doré ——— */
   .kicker,.kick2,.logo em,.svc .num,.step .i,.quote .q span,.contact h2 em{
@@ -274,12 +276,14 @@
   </div></section>
 
   <section id="contact"><div class="wrap">
-    <div class="contact">
-      <h2>On crée votre <em>racine&nbsp;?</em></h2>
-      <p>Un projet, une idée, ou simplement une question — écrivez-moi, je réponds vite.</p>
-      <div style="display:flex;gap:16px;margin-top:30px;flex-wrap:wrap;justify-content:center">
+    <div class="cta-band">
+      <div>
+        <h2>Un projet <em>en t&ecirc;te&nbsp;?</em></h2>
+        <p>D&eacute;crivez-moi votre besoin en deux lignes - je vous r&eacute;ponds avec une proposition claire.</p>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:30px;flex-wrap:wrap">
         <a class="solid" href="contact.html">Nous contacter</a>
-        <a class="ghost" href="#top">Retour en haut ↑</a>
+        <a class="ghost" href="#top">Retour en haut &uarr;</a>
       </div>
     </div>
   </div></section>
@@ -376,7 +380,7 @@
       // Les blocs accrochés par une racine apparaissent QUAND leur racine s'y
       // fixe (piloté plus bas dans draw). Le reste (titres, textes) apparaît au
       // scroll classique.
-      var revSel='header .kicker,header h1,header .lead,header .cta,.kick2,.h2,.sub,.svc,.case:not(.x),.steps,.quote,.contact';
+      var revSel='header .kicker,header h1,header .lead,header .cta,.kick2,.h2,.sub,.svc,.case:not(.x),.steps,.quote,.cta-band';
       [].slice.call(document.querySelectorAll(revSel)).forEach(function(el){
         el.classList.add((el.classList.contains('svc')||el.classList.contains('case'))?'rvf':'rv');
       });
