@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Root Connect — Sites web sur-mesure</title>
+<title>La Méthode IA — Root Connect</title>
 <meta name="description" content="Root Connect — création de sites web sur-mesure. Des sites qui prennent racine et connectent votre activité à vos clients." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -204,6 +204,14 @@
   .modal-desc{color:var(--muted);font-size:1.05rem;margin-bottom:34px;line-height:1.6}
   .modal-cta{display:flex;gap:14px;flex-wrap:wrap}
   @media(max-width:760px){.modal-box{grid-template-columns:1fr;max-width:500px;max-height:90vh;overflow-y:auto}.modal-img-col{height:240px}.modal-content-col{padding:30px 24px}}
+  /* ——— Methode ——— */
+  .ben-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:54px;padding-bottom:60px;}
+  .ben-card{background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:36px;transition:.3s}
+  .ben-card:hover{border-color:var(--brass);transform:translateY(-4px)}
+  .ben-card h3{font-family:var(--serif);font-size:1.8rem;margin-bottom:12px;color:var(--fg)}
+  .ben-card p{color:var(--muted);line-height:1.6;font-size:1.05rem}
+  .ben-icon{width:54px;height:54px;border-radius:16px;background:rgba(210,184,124,0.06);display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-size:1.6rem;border:1px solid rgba(210,184,124,0.15)}
+  @media(max-width:760px){.ben-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -212,63 +220,49 @@
   </div>
   <a class="back" href="../index.html">← versions</a>
   <nav><div class="wrap nav">
-    <a class="logo" href="#top">
+    <a class="logo" href="index.html">
       <svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="#d2b87c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 C 12 6, 10 8, 10 11 L 10 16 L 7 19"/><circle cx="6" cy="20" r="1.5"/><path d="M10 11 C 13 12, 16 10, 16 13 L 16 17 L 19 20"/><circle cx="20" cy="21" r="1.5"/><path d="M16 13 L 13 16 L 13 20"/><circle cx="13" cy="21.5" r="1.5"/><path d="M10 14 L 6 14 L 4 16"/><circle cx="3" cy="17" r="1.5"/></svg>
       Root<em>Connect</em></a>
-    <div class="links"><a href="services.html">Services</a><a href="realisations.html">Réalisations</a><a href="methode.html">Méthode</a><a href="contact.html">Contact</a></div>
-    <a class="btn" href="contact.html"><span class="d-full">Démarrer un projet</span><span class="d-short">Démarrer →</span></a>
+    <div class="links"><a href="services.html">Services</a><a href="realisations.html">Réalisations</a><a class="active" href="#top">Méthode</a><a href="contact.html">Contact</a></div>
+    
   </div></nav>
 
   <header id="top"><div class="wrap">
-    <div class="kicker">Création de sites web sur-mesure</div>
-    <h1>Des sites qui<br><em>prennent racine.</em></h1>
-    <p class="lead">Root Connect dessine et développe des <b>sites web élégants</b> qui ancrent votre activité en ligne et la connectent à vos clients.</p>
+    <div class="kicker">Création par Intelligence Artificielle</div>
+    <h1>Le web premium,<br><em>sans compromis.</em></h1>
+    <p class="lead">Je fusionne l'expertise d'un directeur artistique avec la vélocité des intelligences artificielles de développement pour créer votre site web sur-mesure.</p>
     <div class="cta">
-      <a class="solid" href="realisations.html">Voir mes réalisations</a>
+      <a class="solid" href="#benefits">Découvrir les avantages</a>
       <a class="ghost" href="#contact">Parler de mon projet</a>
     </div>
   </div></header>
 
-  <section id="services"><div class="wrap">
+  <section id="benefits"><div class="wrap">
     <div class="center">
-      <div class="kick2">Ce que je fais</div>
-      <h2 class="h2">Un accompagnement complet</h2>
-      <p class="sub">De la première idée jusqu'à la mise en ligne, je m'occupe de tout.</p>
+      <div class="kick2">Pourquoi l'IA ?</div>
+      <h2 class="h2">Le sur-mesure, accéléré</h2>
+      <p class="sub">Découvrez une nouvelle manière de concevoir le web. L'IA permet de rationaliser la production tout en conservant une exigence haut de gamme.</p>
     </div>
-    <div class="services">
-      <div class="svc"><div class="num">i</div><h3>Direction artistique</h3><p>Plusieurs ambiances proposées au choix. On repart de zéro pour une identité qui vous ressemble.</p></div>
-      <div class="svc"><div class="num">ii</div><h3>Développement</h3><p>Sites rapides et responsive, soignés dans le moindre détail. Du code propre, des animations subtiles.</p></div>
-      <div class="svc"><div class="num">iii</div><h3>Mise en ligne</h3><p>Hébergement, nom de domaine, suivi. Votre site en ligne, sans aucune prise de tête.</p></div>
-    </div>
-    <div class="center" style="margin-top:38px"><a class="ghost" href="services.html">Voir le détail des services &amp; formules →</a></div>
-  </div></section>
-
-  <section id="work"><div class="wrap">
-    <div class="center">
-      <div class="kick2">Réalisations</div>
-      <h2 class="h2">Des projets en ligne</h2>
-      <p class="sub">Chaque site avec sa propre direction artistique, pensée sur-mesure.</p>
-    </div>
-    <div class="grid">
-      <a class="case" href="#" data-link="#" data-img="img/mockup_voyance.png" data-keywords="Web Design, Responsive, 3 thèmes" data-desc="Pour ce cabinet de voyance renommé, j'ai réalisé une refonte complète de l'identité en ligne. La particularité de ce projet réside dans son architecture multi-thèmes : le site change entièrement d'ambiance colorimétrique selon le profil du praticien consulté. Intégration d'un tunnel de réservation ultra optimisé et fluide sur mobile."><div class="thumb th1"><div class="t">Rachel Hermann<span class="s">Voyance · 3 ambiances</span></div></div><div class="info"><div><h3>Rachel Hermann</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
-      <a class="case" href="#" data-link="#" data-img="img/mockup_voyance.png" data-keywords="Dark/Light Mode, SEO Optimisé, Animations" data-desc="Création d'une vitrine digitale mystique et élégante. J'ai conçu un système de thème clair / sombre (Dark Mode) activable en temps réel, permettant à l'utilisateur de choisir son ambiance de consultation. Le code est pensé pour une accessibilité maximale et un chargement quasi-instantané, crucial pour leur clientèle mobile."><div class="thumb th3"><div class="t">Tania des Anges<span class="s">Voyance · sombre &amp; clair</span></div></div><div class="info"><div><h3>Tania des Anges</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
-    </div>
-    <div class="center" style="margin-top:36px"><a class="ghost morebtn" href="realisations.html">Voir plus de réalisations →</a></div>
-  </div></section>
-
-  <section id="process"><div class="wrap">
-    <div class="process">
-      <div style="background:rgba(16,36,27,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:40px;border-radius:24px;border:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,0.2);">
-        <div class="kick2">La Méthode Root Connect</div>
-        <h2 class="h2" style="margin-bottom:18px">L'excellence propulsée par l'IA</h2>
-        <p class="sub" style="margin-bottom:30px">Je fusionne mon expertise de directeur artistique avec la puissance des intelligences artificielles de développement web les plus avancées pour vous offrir un site premium en un temps record.</p>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <a class="solid" href="methode.html">Découvrir la méthode IA</a>
-        </div>
+    <div class="ben-grid">
+      <div class="ben-card">
+        <div class="ben-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+        <h3>Délais optimisés</h3>
+        <p>L'IA génère l'architecture et le code à une vitesse fulgurante, ce qui me permet de me concentrer pleinement sur les finitions, les animations et votre direction artistique.</p>
       </div>
-      <div class="quote">
-        <div class="q">« Des délais divisés par 3, un budget maîtrisé et un code 100% sur-mesure. C'est la révolution de la création par IA. »</div>
-        <div class="by">— Root Connect</div>
+      <div class="ben-card">
+        <div class="ben-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></div>
+        <h3>Budget maîtrisé</h3>
+        <p>L'automatisation des tâches de développement répétitives réduit considérablement le temps de production global, offrant ainsi une alternative très compétitive aux processus classiques.</p>
+      </div>
+      <div class="ben-card">
+        <div class="ben-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
+        <h3>Originalité &amp; Sur-mesure</h3>
+        <p>L'IA produit un code pur et unique, taillé spécifiquement pour votre projet. Votre site s'affranchit des templates rigides et ne ressemblera à aucun autre.</p>
+      </div>
+      <div class="ben-card">
+        <div class="ben-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg></div>
+        <h3>Qualité &amp; Performance</h3>
+        <p>Les modèles génèrent un code moderne, propre et parfaitement structuré. Le résultat est un site rapide, optimisé pour le référencement naturel (SEO) et fluide sur tous les écrans.</p>
       </div>
     </div>
   </div></section>
@@ -277,7 +271,7 @@
     <div class="contact">
       <h2>On crée votre <em>racine&nbsp;?</em></h2>
       <p>Un projet, une idée, ou simplement une question — écrivez-moi, je réponds vite.</p>
-      <div style="display:flex;gap:16px;margin-top:30px;flex-wrap:wrap;justify-content:center">
+      <div style="display:flex;gap:16px;margin-top:30px;flex-wrap:wrap">
         <a class="solid" href="contact.html">Nous contacter</a>
         <a class="ghost" href="#top">Retour en haut ↑</a>
       </div>

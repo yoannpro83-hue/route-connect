@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Root Connect — Sites web sur-mesure</title>
+<title>Réalisations — Root Connect</title>
 <meta name="description" content="Root Connect — création de sites web sur-mesure. Des sites qui prennent racine et connectent votre activité à vos clients." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,7 +31,7 @@
   .logo em{font-style:italic;color:var(--brass)}
   .nav .links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:32px;font-size:1.05rem;color:var(--muted)}
   .nav .links a{transition:color .25s;position:relative}
-  .nav .links a:hover{color:var(--brass2)}
+  .nav .links a:hover,.nav .links a.active{color:var(--brass2)}
   .btn{font-size:.9rem;border:1px solid var(--brass);background:var(--bg2);color:var(--brass2);padding:10px 20px;border-radius:30px;transition:.3s;white-space:nowrap}
   .btn:hover{background:var(--brass);color:#0c1a14}
   .btn .d-short{display:none}
@@ -212,64 +212,28 @@
   </div>
   <a class="back" href="../index.html">← versions</a>
   <nav><div class="wrap nav">
-    <a class="logo" href="#top">
+    <a class="logo" href="index.html">
       <svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="#d2b87c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 C 12 6, 10 8, 10 11 L 10 16 L 7 19"/><circle cx="6" cy="20" r="1.5"/><path d="M10 11 C 13 12, 16 10, 16 13 L 16 17 L 19 20"/><circle cx="20" cy="21" r="1.5"/><path d="M16 13 L 13 16 L 13 20"/><circle cx="13" cy="21.5" r="1.5"/><path d="M10 14 L 6 14 L 4 16"/><circle cx="3" cy="17" r="1.5"/></svg>
       Root<em>Connect</em></a>
-    <div class="links"><a href="services.html">Services</a><a href="realisations.html">Réalisations</a><a href="methode.html">Méthode</a><a href="contact.html">Contact</a></div>
-    <a class="btn" href="contact.html"><span class="d-full">Démarrer un projet</span><span class="d-short">Démarrer →</span></a>
+    <div class="links"><a href="services.html">Services</a><a class="active" href="#top">Réalisations</a><a href="methode.html">Méthode</a><a href="contact.html">Contact</a></div>
+    
   </div></nav>
 
-  <header id="top"><div class="wrap">
-    <div class="kicker">Création de sites web sur-mesure</div>
-    <h1>Des sites qui<br><em>prennent racine.</em></h1>
-    <p class="lead">Root Connect dessine et développe des <b>sites web élégants</b> qui ancrent votre activité en ligne et la connectent à vos clients.</p>
-    <div class="cta">
-      <a class="solid" href="realisations.html">Voir mes réalisations</a>
-      <a class="ghost" href="#contact">Parler de mon projet</a>
-    </div>
-  </div></header>
-
-  <section id="services"><div class="wrap">
-    <div class="center">
-      <div class="kick2">Ce que je fais</div>
-      <h2 class="h2">Un accompagnement complet</h2>
-      <p class="sub">De la première idée jusqu'à la mise en ligne, je m'occupe de tout.</p>
-    </div>
-    <div class="services">
-      <div class="svc"><div class="num">i</div><h3>Direction artistique</h3><p>Plusieurs ambiances proposées au choix. On repart de zéro pour une identité qui vous ressemble.</p></div>
-      <div class="svc"><div class="num">ii</div><h3>Développement</h3><p>Sites rapides et responsive, soignés dans le moindre détail. Du code propre, des animations subtiles.</p></div>
-      <div class="svc"><div class="num">iii</div><h3>Mise en ligne</h3><p>Hébergement, nom de domaine, suivi. Votre site en ligne, sans aucune prise de tête.</p></div>
-    </div>
-    <div class="center" style="margin-top:38px"><a class="ghost" href="services.html">Voir le détail des services &amp; formules →</a></div>
-  </div></section>
-
-  <section id="work"><div class="wrap">
+  <section id="top"><div class="wrap">
     <div class="center">
       <div class="kick2">Réalisations</div>
-      <h2 class="h2">Des projets en ligne</h2>
+      <h1 class="h2">Des projets en ligne</h1>
       <p class="sub">Chaque site avec sa propre direction artistique, pensée sur-mesure.</p>
     </div>
     <div class="grid">
       <a class="case" href="#" data-link="#" data-img="img/mockup_voyance.png" data-keywords="Web Design, Responsive, 3 thèmes" data-desc="Pour ce cabinet de voyance renommé, j'ai réalisé une refonte complète de l'identité en ligne. La particularité de ce projet réside dans son architecture multi-thèmes : le site change entièrement d'ambiance colorimétrique selon le profil du praticien consulté. Intégration d'un tunnel de réservation ultra optimisé et fluide sur mobile."><div class="thumb th1"><div class="t">Rachel Hermann<span class="s">Voyance · 3 ambiances</span></div></div><div class="info"><div><h3>Rachel Hermann</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
       <a class="case" href="#" data-link="#" data-img="img/mockup_voyance.png" data-keywords="Dark/Light Mode, SEO Optimisé, Animations" data-desc="Création d'une vitrine digitale mystique et élégante. J'ai conçu un système de thème clair / sombre (Dark Mode) activable en temps réel, permettant à l'utilisateur de choisir son ambiance de consultation. Le code est pensé pour une accessibilité maximale et un chargement quasi-instantané, crucial pour leur clientèle mobile."><div class="thumb th3"><div class="t">Tania des Anges<span class="s">Voyance · sombre &amp; clair</span></div></div><div class="info"><div><h3>Tania des Anges</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
-    </div>
-    <div class="center" style="margin-top:36px"><a class="ghost morebtn" href="realisations.html">Voir plus de réalisations →</a></div>
-  </div></section>
-
-  <section id="process"><div class="wrap">
-    <div class="process">
-      <div style="background:rgba(16,36,27,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:40px;border-radius:24px;border:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,0.2);">
-        <div class="kick2">La Méthode Root Connect</div>
-        <h2 class="h2" style="margin-bottom:18px">L'excellence propulsée par l'IA</h2>
-        <p class="sub" style="margin-bottom:30px">Je fusionne mon expertise de directeur artistique avec la puissance des intelligences artificielles de développement web les plus avancées pour vous offrir un site premium en un temps record.</p>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <a class="solid" href="methode.html">Découvrir la méthode IA</a>
-        </div>
-      </div>
-      <div class="quote">
-        <div class="q">« Des délais divisés par 3, un budget maîtrisé et un code 100% sur-mesure. C'est la révolution de la création par IA. »</div>
-        <div class="by">— Root Connect</div>
-      </div>
+      <a class="case" href="#" data-link="#" data-img="img/mockup_corporate.png" data-keywords="Associatif, Dons en ligne, Agenda" data-desc="Site vitrine pensé pour mettre en avant les actions d'une association solidaire. Le design chaleureux inspire la confiance. Mise en place d'un système de gestion des dons sécurisé et d'un calendrier des événements facilement administrable par l'équipe bénévole."><div class="thumb th2"><div class="t">Brocante du Cœur<span class="s">Association solidaire</span></div></div><div class="info"><div><h3>Brocante du Cœur</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
+      <a class="case" href="#" data-link="#" data-img="img/mockup_corporate.png" data-keywords="Menu Dynamique, Réservation, Vitrine" data-desc="Site vitrine immersif pour un restaurant italien authentique. L'interface met l'accent sur les visuels culinaires de haute qualité. J'ai intégré un menu administrable dynamiquement ainsi qu'un module de réservation de table synchronisé avec leur outil interne."><div class="thumb th4"><div class="t">Trattoria Lucia<span class="s">Restaurant italien</span></div></div><div class="info"><div><h3>Trattoria Lucia</h3><div class="tags">Exemple · Vitrine + menu</div></div><span class="arrow">↗</span></div></a>
+      <a class="case" href="#" data-link="#" data-img="img/mockup_corporate.png" data-keywords="Portfolio, Galeries Photos, Minimalisme" data-desc="Création d'un portfolio très visuel et élégant pour un artisan paysagiste. L'objectif était de laisser la place aux photographies de ses réalisations grâce à un design minimaliste et des transitions de pages fluides qui subliment le travail naturel."><div class="thumb th5"><div class="t">Atelier Verde<span class="s">Paysagiste</span></div></div><div class="info"><div><h3>Atelier Verde</h3><div class="tags">Exemple · Portfolio</div></div><span class="arrow">↗</span></div></a>
+      <a class="case" href="#" data-link="#" data-img="img/mockup_corporate.png" data-keywords="Landing Page, Conversion, Coaching" data-desc="Conception d'une landing page ultra-optimisée pour un cabinet de coaching et conseil. Le parcours utilisateur a été étudié pour guider naturellement le visiteur vers la prise de contact, avec des appels à l'action stratégiquement placés et une copie percutante."><div class="thumb th6"><div class="t">Nord Studio<span class="s">Coaching &amp; conseil</span></div></div><div class="info"><div><h3>Nord Studio</h3><div class="tags">Exemple · Landing</div></div><span class="arrow">↗</span></div></a>
+      <a class="case" href="#" data-link="#" data-img="img/mockup_corporate.png" data-keywords="Corporate, Sérénité, Lead Gen" data-desc="Développement d'un site corporate institutionnel pour un cabinet d'avocats. Le design a été pensé pour inspirer la confiance, la sobriété et le sérieux. L'architecture de l'information permet de présenter clairement les différentes expertises et de faciliter la prise de contact rapide."><div class="thumb th1" style="background:radial-gradient(120% 100% at 30% 0,#142438,#0a1320 60%);"><div class="t" style="color:#dbe7f4;">Cabinet Lexia<span class="s" style="color:#8ba8cc;">Avocats · Corporate</span></div></div><div class="info"><div><h3>Cabinet Lexia</h3><div class="tags">Exemple · Vitrine Corporate</div></div><span class="arrow">↗</span></div></a>
+      <a class="case" href="#" data-link="#" data-img="img/mockup_corporate.png" data-keywords="E-commerce, Catalogue, Artisanat" data-desc="Création d'un site e-commerce léger et intuitif pour un artisan menuisier indépendant. Présentation d'un catalogue de créations en bois sur mesure, avec un module simple de demande de devis personnalisé intégré directement sur les fiches produits."><div class="thumb th2" style="background:#e0cdc1;"><div class="t" style="color:#4a3223;">Atelier Bois &amp; Co<span class="s" style="color:#8a654e;">Artisan menuisier</span></div></div><div class="info"><div><h3>Atelier Bois &amp; Co</h3><div class="tags">Exemple · Artisanat</div></div><span class="arrow">↗</span></div></a>
     </div>
   </div></section>
 
@@ -277,7 +241,7 @@
     <div class="contact">
       <h2>On crée votre <em>racine&nbsp;?</em></h2>
       <p>Un projet, une idée, ou simplement une question — écrivez-moi, je réponds vite.</p>
-      <div style="display:flex;gap:16px;margin-top:30px;flex-wrap:wrap;justify-content:center">
+      <div style="display:flex;gap:16px;margin-top:30px;flex-wrap:wrap">
         <a class="solid" href="contact.html">Nous contacter</a>
         <a class="ghost" href="#top">Retour en haut ↑</a>
       </div>
