@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Politique de confidentialité — Root Connect</title>
+<meta name="description" content="Politique de confidentialité et protection des données personnelles du site Root Connect." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#0c1a14;--bg2:#10241b;--panel:#13291f;--line:rgba(208,184,124,.18);
+    --txt:#eef3ec;--muted:#9fb2a4;--em:#2fae7a;--em2:#48d39a;--brass:#d2b87c;--brass2:#e8d3a0;
+    --serif:'Fraunces',serif;--sans:'Inter',sans-serif;}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;position:relative;overflow-x:hidden}
+  ::selection{background:var(--brass);color:#0c1a14}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1160px,100%);margin:0 auto;padding:0 26px}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background:radial-gradient(80% 50% at 80% -5%,rgba(47,174,122,.16),transparent 60%),
+               radial-gradient(60% 50% at 5% 20%,rgba(210,184,124,.08),transparent 55%)}
+
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(12,26,20,.7);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .logo{font-family:var(--serif);font-weight:500;font-size:1.65rem;letter-spacing:.2px;display:flex;align-items:center;gap:14px}
+  .logo .leaf{width:34px;height:34px;flex-shrink:0}
+  .logo em{font-style:italic;color:var(--brass)}
+  .nav .links{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:32px;font-size:1.05rem;color:var(--muted)}
+  .nav .links a{transition:color .25s}.nav .links a:hover{color:var(--brass2)}
+  .btn{font-size:.9rem;border:1px solid var(--brass);background:var(--bg2);color:var(--brass2);padding:10px 20px;border-radius:30px;transition:.3s;white-space:nowrap}
+  .btn:hover{background:var(--brass);color:#0c1a14}
+  .btn .d-short{display:none}
+  @media(max-width:760px){.nav .links{display:none}.logo{font-size:1.18rem}.btn{font-size:.84rem;padding:9px 15px}.btn .d-full{display:none}.btn .d-short{display:inline}}
+
+  main{position:relative;z-index:1;padding:clamp(50px,8vw,90px) 0 clamp(40px,6vw,70px)}
+  .legal{max-width:780px;margin:0 auto}
+  .legal .kicker{font-size:.82rem;letter-spacing:3px;text-transform:uppercase;color:var(--brass);margin-bottom:16px}
+  .legal h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,6vw,3.4rem);letter-spacing:-1px;line-height:1.1}
+  .legal .upd{color:var(--muted);font-size:.9rem;margin-top:14px;padding-bottom:26px;border-bottom:1px solid var(--line)}
+  .legal h2{font-family:var(--serif);font-weight:500;font-size:1.5rem;margin:40px 0 12px}
+  .legal p,.legal li{color:#cdd8cf;font-size:1rem}
+  .legal p{margin:0 0 14px}
+  .legal ul{margin:0 0 14px;padding-left:22px}
+  .legal li{margin-bottom:7px}
+  .legal a.link{color:var(--brass2);border-bottom:1px solid rgba(210,184,124,.4);transition:.2s}
+  .legal a.link:hover{border-color:var(--brass)}
+  .legal strong{color:var(--txt);font-weight:600}
+  .todo{background:rgba(210,184,124,.16);color:var(--brass2);border:1px dashed rgba(210,184,124,.5);
+    border-radius:6px;padding:1px 8px;font-size:.92em;font-weight:500;white-space:nowrap}
+  .note{margin-top:46px;border:1px solid var(--line);border-radius:16px;padding:22px 24px;background:var(--bg2);color:var(--muted);font-size:.93rem}
+  .note b{color:var(--brass2)}
+
+  footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:38px 0;margin-top:40px}
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+  .foot a:hover{color:var(--brass2)}
+  .back{position:fixed;left:18px;bottom:18px;z-index:60;font-size:.82rem;color:var(--muted);border:1px solid var(--line);
+    background:rgba(12,26,20,.8);backdrop-filter:blur(8px);padding:9px 15px;border-radius:30px;transition:.25s}
+  .back:hover{color:var(--brass2);border-color:var(--brass)}
+</style>
+</head>
+<body>
+  <a class="back" href="../index.html">← versions</a>
+  <nav><div class="wrap nav">
+    <a class="logo" href="index.html">
+      <svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="#d2b87c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 C 12 6, 10 8, 10 11 L 10 16 L 7 19"/><circle cx="6" cy="20" r="1.5"/><path d="M10 11 C 13 12, 16 10, 16 13 L 16 17 L 19 20"/><circle cx="20" cy="21" r="1.5"/><path d="M16 13 L 13 16 L 13 20"/><circle cx="13" cy="21.5" r="1.5"/><path d="M10 14 L 6 14 L 4 16"/><circle cx="3" cy="17" r="1.5"/></svg>
+      Root<em>Connect</em></a>
+    <div class="links"><a href="services.html">Services</a><a href="realisations.html">Réalisations</a><a href="methode.html">Méthode</a><a href="contact.html">Contact</a></div>
+    <a class="btn" href="contact.html"><span class="d-full">Démarrer un projet</span><span class="d-short">Démarrer →</span></a>
+  </div></nav>
+
+  <main><div class="wrap"><div class="legal">
+    <div class="kicker">Protection des données</div>
+    <h1>Politique de confidentialité</h1>
+    <p class="upd">Dernière mise à jour : <span class="todo">JJ/MM/AAAA</span> — Conforme au RGPD (Règlement UE 2016/679) et à la loi « Informatique et Libertés ».</p>
+
+    <p>La présente politique explique comment Root Connect collecte, utilise et protège vos données personnelles lorsque vous utilisez le site <strong>root-connect</strong>. Nous nous engageons à n'en collecter que le strict nécessaire.</p>
+
+    <h2>1. Responsable du traitement</h2>
+    <p>Le responsable du traitement des données est <strong>Root Connect</strong> — <span class="todo">Prénom NOM</span>, <span class="todo">adresse</span>. Contact : <a class="link" href="mailto:contact@root-connect.fr">contact@root-connect.fr</a>.</p>
+
+    <h2>2. Données collectées</h2>
+    <p>Nous collectons uniquement les données que vous nous transmettez volontairement via le <strong>formulaire de contact</strong> :</p>
+    <ul>
+      <li>Prénom et nom</li>
+      <li>Adresse e-mail</li>
+      <li>Sujet et contenu de votre message</li>
+    </ul>
+    <p>Le Site ne crée aucun compte utilisateur et ne traite aucune donnée de paiement en ligne.</p>
+
+    <h2>3. Finalité &amp; base légale</h2>
+    <p>Ces données sont utilisées exclusivement pour <strong>répondre à votre demande</strong> (information, devis, prise de contact). La base légale est votre <strong>consentement</strong> et l'exécution de mesures précontractuelles prises à votre demande (art. 6 du RGPD). Elles ne font l'objet d'aucune prospection commerciale non sollicitée ni d'aucune revente.</p>
+
+    <h2>4. Destinataires &amp; sous-traitants</h2>
+    <p>Vos données sont destinées au seul responsable du traitement. Le Site étant hébergé par <strong>GitHub Pages</strong> (GitHub, Inc., États-Unis), un transfert de données hors Union européenne est susceptible d'intervenir, encadré par les clauses contractuelles types de la Commission européenne.</p>
+    <p><span class="todo">Si le formulaire est relié à un service tiers (ex. Formspree, EmailJS, Brevo…), le nommer ici en tant que sous-traitant et préciser sa localisation.</span></p>
+
+    <h2>5. Durée de conservation</h2>
+    <p>Les données issues du formulaire de contact sont conservées pendant la durée nécessaire au traitement de votre demande, puis jusqu'à <span class="todo">3 ans</span> à compter de notre dernier échange, avant suppression.</p>
+
+    <h2>6. Vos droits</h2>
+    <p>Conformément au RGPD, vous disposez des droits suivants sur vos données : <strong>accès, rectification, effacement, opposition, limitation et portabilité</strong>. Vous pouvez les exercer à tout moment en écrivant à <a class="link" href="mailto:contact@root-connect.fr">contact@root-connect.fr</a> (une preuve d'identité pourra être demandée).</p>
+    <p>Vous avez également le droit d'introduire une réclamation auprès de la <strong>CNIL</strong> : <a class="link" href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>.</p>
+
+    <h2>7. Cookies &amp; traceurs</h2>
+    <p>En l'état, le Site <strong>n'utilise aucun cookie de suivi ni outil de mesure d'audience</strong> (pas de Google Analytics, pas de traceur publicitaire). Seules les polices de caractères sont chargées depuis Google Fonts. Aucun bandeau de consentement n'est donc nécessaire.</p>
+    <p><span class="todo">Si vous ajoutez plus tard un outil de statistiques ou de publicité, un bandeau de consentement aux cookies deviendra obligatoire.</span></p>
+
+    <h2>8. Sécurité</h2>
+    <p>Le Site est servi en <strong>HTTPS</strong> (connexion chiffrée). Nous mettons en œuvre des mesures raisonnables pour protéger vos données contre tout accès, altération ou divulgation non autorisés.</p>
+
+    <div class="note">
+      <p><b>⚠️ À adapter avant publication.</b> Renseigne les champs surlignés et mets à jour la section « Destinataires » dès que le formulaire de contact sera relié à un service d'envoi. Ce document est un modèle de bonne foi conforme aux principes du RGPD ; en cas de doute, fais-le relire par un professionnel.</p>
+    </div>
+  </div></div></main>
+
+  <footer><div class="wrap foot">
+    <span>© <span id="y"></span> Root Connect — Sites web sur-mesure</span>
+    <span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="mailto:contact@root-connect.fr">contact@root-connect.fr</a></span>
+  </div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
