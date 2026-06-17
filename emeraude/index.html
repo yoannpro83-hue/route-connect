@@ -75,13 +75,14 @@
   .h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.5px;margin:14px 0 0}
   .sub{color:var(--muted);max-width:560px;margin:16px auto 0;font-size:1.06rem}
 
-  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:54px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--line)}
-  .svc{background:var(--bg2);padding:38px 30px;transition:.4s}
+  .services{display:grid;grid-template-columns:repeat(3,1fr);margin-top:54px;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .svc{background:var(--bg2);padding:38px 30px;transition:.4s;border-left:1px solid var(--line)}
+  .svc:first-child{border-left:0}
   .svc:hover{background:var(--panel)}
   .svc .num{font-family:var(--serif);font-style:italic;font-size:2.2rem;color:var(--brass)}
   .svc h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;margin:10px 0 10px}
   .svc p{color:var(--muted);font-size:.96rem}
-  @media(max-width:780px){.services{grid-template-columns:1fr}}
+  @media(max-width:780px){.services{grid-template-columns:1fr}.svc{border-left:0;border-top:1px solid var(--line)}.svc:first-child{border-top:0}}
 
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:54px}
   .case{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--bg2);transition:.5s cubic-bezier(.22,1,.36,1);display:block}
@@ -101,6 +102,10 @@
   .th5{background:linear-gradient(160deg,#0d3b3a,#06201f)}.th5 .t{color:#d8f3ee}.th5 .s{color:#7fd9c8}
   .th6{background:linear-gradient(160deg,#23252b,#121316)}.th6 .t{color:#eef0f2}.th6 .s{color:#9aa3ad}
   @media(max-width:780px){.grid{grid-template-columns:1fr}}
+  .more-wrap{display:none}
+  .more-wrap.show{display:block;animation:moreIn .6s cubic-bezier(.22,1,.36,1)}
+  @keyframes moreIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .morebtn{font:500 .95rem var(--sans);color:var(--txt);background:transparent;cursor:pointer}
 
   .process{display:grid;grid-template-columns:1.1fr 1fr;gap:54px;align-items:center}
   .steps{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:24px;
@@ -159,8 +164,8 @@
   .info h3{transition:color .35s}
   /* boutons : reflet qui traverse au survol */
   .solid,.ghost,.btn{position:relative;overflow:hidden;isolation:isolate}
-  .solid::before,.ghost::before,.btn::before{content:"";position:absolute;top:0;left:-160%;width:75%;height:100%;z-index:1;
-    background:linear-gradient(100deg,transparent,rgba(255,247,222,.55),transparent);transform:skewX(-20deg);
+  .solid::before,.ghost::before,.btn::before{content:"";position:absolute;top:0;left:-160%;width:75%;height:100%;z-index:-1;
+    background:linear-gradient(100deg,transparent,rgba(255,247,222,.5),transparent);transform:skewX(-20deg);
     transition:left .7s cubic-bezier(.22,1,.36,1);pointer-events:none}
   .solid:hover::before,.ghost:hover::before,.btn:hover::before{left:170%}
   .solid,.ghost,.btn,.case,.svc{will-change:transform}
@@ -231,11 +236,14 @@
     <div class="grid">
       <a class="case" href="#contact"><div class="thumb th1"><div class="t">Rachel Hermann<span class="s">Voyance · 3 ambiances</span></div></div><div class="info"><div><h3>Rachel Hermann</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
       <a class="case" href="#contact"><div class="thumb th3"><div class="t">Tania des Anges<span class="s">Voyance · sombre &amp; clair</span></div></div><div class="info"><div><h3>Tania des Anges</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
-      <a class="case" href="#contact"><div class="thumb th2"><div class="t">Brocante du Cœur<span class="s">Association solidaire</span></div></div><div class="info"><div><h3>Brocante du Cœur</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
-      <a class="case" href="#contact"><div class="thumb th4"><div class="t">Trattoria Lucia<span class="s">Restaurant italien</span></div></div><div class="info"><div><h3>Trattoria Lucia</h3><div class="tags">Exemple · Vitrine + menu</div></div><span class="arrow">↗</span></div></a>
-      <a class="case" href="#contact"><div class="thumb th5"><div class="t">Atelier Verde<span class="s">Paysagiste</span></div></div><div class="info"><div><h3>Atelier Verde</h3><div class="tags">Exemple · Portfolio</div></div><span class="arrow">↗</span></div></a>
-      <a class="case" href="#contact"><div class="thumb th6"><div class="t">Nord Studio<span class="s">Coaching &amp; conseil</span></div></div><div class="info"><div><h3>Nord Studio</h3><div class="tags">Exemple · Landing</div></div><span class="arrow">↗</span></div></a>
     </div>
+    <div class="more-wrap"><div class="grid" style="margin-top:22px">
+      <a class="case x" href="#contact"><div class="thumb th2"><div class="t">Brocante du Cœur<span class="s">Association solidaire</span></div></div><div class="info"><div><h3>Brocante du Cœur</h3><div class="tags">Design · Build · Deploy</div></div><span class="arrow">↗</span></div></a>
+      <a class="case x" href="#contact"><div class="thumb th4"><div class="t">Trattoria Lucia<span class="s">Restaurant italien</span></div></div><div class="info"><div><h3>Trattoria Lucia</h3><div class="tags">Exemple · Vitrine + menu</div></div><span class="arrow">↗</span></div></a>
+      <a class="case x" href="#contact"><div class="thumb th5"><div class="t">Atelier Verde<span class="s">Paysagiste</span></div></div><div class="info"><div><h3>Atelier Verde</h3><div class="tags">Exemple · Portfolio</div></div><span class="arrow">↗</span></div></a>
+      <a class="case x" href="#contact"><div class="thumb th6"><div class="t">Nord Studio<span class="s">Coaching &amp; conseil</span></div></div><div class="info"><div><h3>Nord Studio</h3><div class="tags">Exemple · Landing</div></div><span class="arrow">↗</span></div></a>
+    </div></div>
+    <div class="center" style="margin-top:36px"><button class="ghost morebtn" type="button">Voir plus de réalisations →</button></div>
   </div></section>
 
   <section id="process"><div class="wrap">
@@ -328,7 +336,7 @@
       // et reliée au reste), une branche rejoint le bloc et s'y fixe. Jamais
       // de morceau détaché.
       var endpoints=base.map(function(s){return {x:s.x2,y:s.y2,g:s.g1/gMax};});
-      var anchorEls=[].slice.call(document.querySelectorAll('.services,.case,.steps,.quote,.contact'));
+      var anchorEls=[].slice.call(document.querySelectorAll('.services,.case:not(.x),.steps,.quote,.contact'));
       var hooks=anchorEls.map(function(el){
         var p=document.createElementNS(SVGNS,'path');
         p.setAttribute('class','hook'); p.setAttribute('pathLength','1');
@@ -342,7 +350,7 @@
       // Les blocs accrochés par une racine apparaissent QUAND leur racine s'y
       // fixe (piloté plus bas dans draw). Le reste (titres, textes) apparaît au
       // scroll classique.
-      var revSel='header .kicker,header h1,header .lead,header .cta,.kick2,.h2,.sub,.svc,.case,.steps,.quote,.contact';
+      var revSel='header .kicker,header h1,header .lead,header .cta,.kick2,.h2,.sub,.svc,.case:not(.x),.steps,.quote,.contact';
       [].slice.call(document.querySelectorAll(revSel)).forEach(function(el){
         el.classList.add((el.classList.contains('svc')||el.classList.contains('case'))?'rvf':'rv');
       });
@@ -458,6 +466,17 @@
       layout(); draw();
     })();
 
+    // « Voir plus » : révèle les autres réalisations + recalage de la racine
+    (function(){
+      var b=document.querySelector('.morebtn');
+      if(!b) return;
+      b.addEventListener('click',function(){
+        var w=document.querySelector('.more-wrap');
+        if(w) w.classList.add('show');
+        b.parentElement.style.display='none';
+        window.dispatchEvent(new Event('resize'));
+      });
+    })();
   </script>
 </body>
 </html>

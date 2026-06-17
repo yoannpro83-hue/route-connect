@@ -125,8 +125,8 @@
   .logo .leaf{transition:transform .5s cubic-bezier(.34,1.4,.5,1)}
   .logo:hover .leaf{transform:rotate(-12deg) scale(1.12)}
   .solid,.ghost,.btn,.pick{position:relative;overflow:hidden;isolation:isolate}
-  .solid::before,.ghost::before,.btn::before,.pick::before{content:"";position:absolute;top:0;left:-160%;width:75%;height:100%;z-index:1;
-    background:linear-gradient(100deg,transparent,rgba(255,247,222,.55),transparent);transform:skewX(-20deg);
+  .solid::before,.ghost::before,.btn::before,.pick::before{content:"";position:absolute;top:0;left:-160%;width:75%;height:100%;z-index:-1;
+    background:linear-gradient(100deg,transparent,rgba(255,247,222,.5),transparent);transform:skewX(-20deg);
     transition:left .7s cubic-bezier(.22,1,.36,1);pointer-events:none}
   .solid:hover::before,.ghost:hover::before,.btn:hover::before,.pick:hover::before{left:170%}
   .solid,.ghost,.btn,.tier{will-change:transform}
