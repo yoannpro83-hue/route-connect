@@ -74,18 +74,6 @@
   .shero .cta{display:flex;gap:14px;flex-wrap:wrap}
   @media(max-width:780px){.shero .hrow{grid-template-columns:1fr;gap:26px}}
 
-  /* ——— PRESTATIONS : grille numérotée compacte ——— */
-  .prest{margin-top:42px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.5vw,38px) clamp(40px,6vw,76px)}
-  .prow{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;
-    padding-bottom:24px;border-bottom:1px solid var(--line);transition:border-color .4s}
-  .prow:hover{border-color:rgba(210,184,124,.45)}
-  .prow .idx{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--brass);line-height:1;transition:transform .45s cubic-bezier(.34,1.4,.5,1)}
-  .prow:hover .idx{transform:translateY(-4px)}
-  .prow h3{font-family:var(--serif);font-weight:500;font-size:1.28rem;margin-bottom:6px;transition:color .3s}
-  .prow:hover h3{color:var(--brass2)}
-  .prow p{color:var(--muted);font-size:.93rem}
-  @media(max-width:680px){.prest{grid-template-columns:1fr;gap:0}.prow{padding:22px 0}}
-
   /* ——— FORMULES : bandeaux horizontaux ——— */
   .tiers{margin-top:46px;display:flex;flex-direction:column;gap:16px}
   .tier{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;
@@ -119,7 +107,7 @@
   @media(max-width:760px){.cta-band{grid-template-columns:1fr;gap:26px}.cta-band .actions{flex-direction:row;flex-wrap:wrap}}
 
   /* ——— or brillant ——— */
-  .kicker,.kick2,.logo em,.prow .idx,.cta-band h2 em{
+  .kicker,.kick2,.logo em,.cta-band h2 em{
     background-image:linear-gradient(100deg,#b8923f 0%,#d6b878 28%,#fff4cf 47%,#f7e6b0 53%,#d6b878 72%,#b8923f 100%);
     background-size:250% 100%;-webkit-background-clip:text;background-clip:text;
     -webkit-text-fill-color:transparent;color:transparent;animation:goldsheen 5.5s linear infinite}
@@ -141,7 +129,7 @@
     background:linear-gradient(100deg,transparent,rgba(255,247,222,.55),transparent);transform:skewX(-20deg);
     transition:left .7s cubic-bezier(.22,1,.36,1);pointer-events:none}
   .solid:hover::before,.ghost:hover::before,.btn:hover::before,.pick:hover::before{left:170%}
-  .solid,.ghost,.btn,.prow,.tier{will-change:transform}
+  .solid,.ghost,.btn,.tier{will-change:transform}
 
   /* ——— apparitions ——— */
   .rv{opacity:0;transform:translateY(30px);filter:blur(7px);
@@ -151,8 +139,8 @@
   .rvf.in{opacity:1;filter:blur(0)}
   @media(prefers-reduced-motion:reduce){
     .rv,.rvf{opacity:1!important;transform:none!important;filter:none!important;transition:none}
-    .kicker,.kick2,.logo em,.prow .idx,.cta-band h2 em,h1 em{animation:none}
-    .kicker,.kick2,.logo em,.prow .idx,.cta-band h2 em{-webkit-text-fill-color:var(--brass);color:var(--brass)}
+    .kicker,.kick2,.logo em,.cta-band h2 em,h1 em{animation:none}
+    .kicker,.kick2,.logo em,.cta-band h2 em{-webkit-text-fill-color:var(--brass);color:var(--brass)}
   }
 
   footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:38px 0;margin-top:20px}
@@ -190,23 +178,6 @@
       </div>
     </div>
   </div></div>
-
-  <section id="offers"><div class="wrap">
-    <div class="shead">
-      <span class="num">01 — 06</span>
-      <div class="kick2">Prestations</div>
-      <h2 class="h2">Ce que je crée pour vous</h2>
-      <p class="sub">Chaque projet pioche dans ces prestations, assemblées sur-mesure selon votre métier.</p>
-    </div>
-    <div class="prest">
-      <div class="prow"><div class="idx">01</div><div><h3>Direction artistique</h3><p>Une identité sur-mesure, repartie de zéro — jamais de template recyclé.</p></div></div>
-      <div class="prow"><div class="idx">02</div><div><h3>Développement sur-mesure</h3><p>Un site rapide, responsive et soigné, codé proprement à la main.</p></div></div>
-      <div class="prow"><div class="idx">03</div><div><h3>Site vitrine</h3><p>Votre activité, vos offres et vos coordonnées, clairement présentées.</p></div></div>
-      <div class="prow"><div class="idx">04</div><div><h3>Refonte de site</h3><p>On modernise votre site vieillissant (Wix, vieux modèle…) sans rien perdre.</p></div></div>
-      <div class="prow"><div class="idx">05</div><div><h3>Mise en ligne &amp; hébergement</h3><p>Domaine, hébergement, HTTPS, déploiement — je gère toute la technique.</p></div></div>
-      <div class="prow"><div class="idx">06</div><div><h3>Suivi &amp; évolutions</h3><p>Mises à jour, ajouts et corrections quand vous en avez besoin.</p></div></div>
-    </div>
-  </div></section>
 
   <section id="tiers"><div class="wrap">
     <div class="shead">
@@ -307,7 +278,7 @@
       });
 
       var endpoints=base.map(function(s){return {x:s.x2,y:s.y2,g:s.g1/gMax};});
-      var anchorEls=[].slice.call(document.querySelectorAll('.prest,.tiers,.cta-band'));
+      var anchorEls=[].slice.call(document.querySelectorAll('.tiers,.cta-band'));
       var hooks=anchorEls.map(function(el){
         var p=document.createElementNS(SVGNS,'path');
         p.setAttribute('class','hook'); p.setAttribute('pathLength','1');
@@ -317,14 +288,14 @@
         return {el:el,path:p,node:c,g0:1,g1:1};
       });
 
-      var revSel='.shero .kicker,.shero h1,.shero .lead,.shero .cta,.kick2,.h2,.sub,.prow,.tier,.cta-band';
+      var revSel='.shero .kicker,.shero h1,.shero .lead,.shero .cta,.kick2,.h2,.sub,.tier,.cta-band';
       [].slice.call(document.querySelectorAll(revSel)).forEach(function(el){
-        el.classList.add((el.classList.contains('prow')||el.classList.contains('tier'))?'rvf':'rv');
+        el.classList.add(el.classList.contains('tier')?'rvf':'rv');
       });
       hooks.forEach(function(h){
         var els=[];
         if(h.el.classList.contains('rv')||h.el.classList.contains('rvf')) els.push(h.el);
-        [].slice.call(h.el.querySelectorAll('.prow,.tier')).forEach(function(d){els.push(d);});
+        [].slice.call(h.el.querySelectorAll('.tier')).forEach(function(d){els.push(d);});
         h.revEls=els;
         els.forEach(function(e){e.__hd=1;});
       });
